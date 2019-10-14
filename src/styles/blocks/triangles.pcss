@@ -1,17 +1,29 @@
+
 .triangles{
+    position: absolute;
+    width: 100%;
     display: flex;
     margin-top: -99px;
 }
 
-.triangles__item, .triangles__item-second{
-    fill:white;
-    display: block;
+.triangle__left{
+    width: 0;
+	height: 0;
+	border-bottom: 130px solid white; 
+    border-right: 2000px solid transparent;	
+    left: 0;
+    bottom: 0;
+    top: 0px;
+    position: absolute;  
 }
 
-.triangles__item{
-    width: 125%
-}
-
-.triangles__item-second{
-    width: 23%;
+.triangle__right{
+    width: 0;
+	height: 0;
+	border-bottom: 150px solid white; 
+    border-left: 400px solid transparent;
+    right: 0;
+    bottom: 0;
+    top: 15px;
+    position: absolute;
 }
