@@ -1,13 +1,13 @@
 section.reviews
     .container.container__reviews
         .reviews__title
-            h2.section-title Что обо мне говорят
+            h2.section-title.reviews__title-text Что обо мне говорят
             .reviews-slider__btns
-                reviews-slider__btn.reviews-slider__btn--left
+                a.reviews-slider__btn.reviews-slider__btn--left
                     +icon('arrow-down', 'reviews-slider__btn-icon arrow')
-                reviews-slider__btn.reviews-slider__btn--right
+                a.reviews-slider__btn.reviews-slider__btn--right
                     +icon('arrow-down', 'reviews-slider__btn-icon arrow')
-            ul.reviews-slider
+        ul.reviews-slider
                 li.reviews-slider__item
                     .reviews-slider__image
                         +icon('quote', 'reviews-slider__icon')
@@ -17,9 +17,9 @@ section.reviews
                             .user.user--horizontal
                                 .user__avatar
                                     +image('content/koval.png', 'user__avatar-pic')
-                                user__desc
-                                    user__name Ковальчук Дмитрий
-                                    user__prof Основатель Loftschool
+                                .user__desc
+                                    .user__name Ковальчук Дмитрий
+                                    .user__prof Основатель Loftschool
                 li.reviews-slider__item
                     .reviews-slider__image
                         +icon('quote', 'reviews-slider__icon')
@@ -29,6 +29,6 @@ section.reviews
                             .user.user--horizontal
                                 .user__avatar
                                     +image('content/vova.png', 'user__avatar-pic')
-                                user__desc
-                                    user__name Сабанцев Владимир
-                                    user__prof Главный преподаватель
+                                .user__desc
+                                    .user__name Сабанцев Владимир
+                                    .user__prof Преподаватель

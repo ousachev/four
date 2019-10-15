@@ -1,0 +1,93 @@
+.container__form{
+    padding: 200px 0 166px;
+    color: white;
+}
+
+.form__title{
+    width: 70%;
+}
+
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+
+    &__wrapper{
+        font-style: 16px;
+        font-weight: 600;
+        line-height: 1.88;
+        text-align: left;
+        width: 47%;
+        margin-bottom: 35px;
+        display: block;
+        position: relative;
+
+        &--name{
+            margin-right: 6%;
+        }
+    
+        &--text{
+            width: 100%;
+            margin-bottom: 55px;
+        }
+    
+        &:hover .contact__input, .contact__input:focus{
+            border-color: $yellow;
+            transition: 0.2s ease-in-out all;
+           
+        }
+    
+        &:hover .contact__icon, &:focus .contact__icon{
+            fill: $yellow;
+            transition:0.2s ease-in-out all ;
+        }
+    }
+        &__label{
+            padding-left: 50px;
+            margin-bottom: 5px;
+            display: block;
+            opacity: 0.3;
+            font-weight: 400;
+        }
+
+        &__input{
+            width: 100%;
+            border: 0;
+            background: transparent;
+            border-bottom: 1px solid white;
+            padding: 3px 5px 7px 17px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height:36px;
+            outline: none;
+            color: white;
+
+            &::-webkit-input-placeholder { color: white !important; }
+            &:-ms-input-placeholder { color: white !important; }
+            &::-ms-input-placeholder { color: white !important; }
+            &::placeholder { color: white !important; } 
+        }
+    }
+
+.contact__wrapper-row{
+    display: flex;
+    align-items: center;
+}
+
+.contact__submit-button{
+    padding: 30px 118px;;
+    border-radius: 40px;
+    background-image: linear-gradient(to right, #3157e8 0%, #4d88ee 100%);
+    color: white;
+    font-size: 18px;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+
+
+.contact__icon{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    opacity: 0.3;
+}
