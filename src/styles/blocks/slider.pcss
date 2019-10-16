@@ -37,15 +37,36 @@
         
     &__item{
     cursor: pointer;
+    position: relative;
 
-        &:active,&:hover{
-           border: solid 3px #dc9322;
+    &:hover{
+        &:after{
+            opacity: 0.6;
         }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        background: $yellow;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+     &:active{
+        outline: 3px solid $yellow;
+        outline-offset: -3px;
+            }
+
+        
+    }
     }
 
     &__pic{
         max-height: inherit;
-    }
+       
+       
 }
 
 
@@ -65,6 +86,7 @@
     position: relative;
     
     &:hover{
+        background: $yellow;
         .slider-buttons__item--slide--prev,
         .slider-buttons__item--slide--next{
             opacity: 1;

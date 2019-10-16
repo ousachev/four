@@ -60,7 +60,8 @@
             line-height:36px;
             outline: none;
             color: white;
-
+            position: relative;
+             padding-left: 45px;
             &::-webkit-input-placeholder { color: white !important; }
             &:-ms-input-placeholder { color: white !important; }
             &::-ms-input-placeholder { color: white !important; }
@@ -75,12 +76,15 @@
 
 .contact__submit-button{
     padding: 30px 118px;;
-    border-radius: 40px;
-    background-image: linear-gradient(to right, #3157e8 0%, #4d88ee 100%);
+    background-image: linear-gradient(to right, #ed8000 0%, #f29400 100%);
     color: white;
     font-size: 18px;
 font-weight: 700;
 text-transform: uppercase;
+
+&:hover{
+    background-image:linear-gradient(to right, #ff8900 0%, #ff9d00 100%) ;
+}
 }
 
 .contact__input--text{
@@ -92,4 +96,6 @@ text-transform: uppercase;
     height: 30px;
     fill: white;
     opacity: 0.3;
+    position: absolute;
+    top: 40px;
 }
