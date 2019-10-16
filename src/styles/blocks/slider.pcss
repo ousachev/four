@@ -36,14 +36,15 @@
     
         
     &__item{
-    cursor: pointer;
-    position: relative;
+     cursor: pointer;
+     position: relative;
 
     &:hover{
-        &:after{
-            opacity: 0.6;
-        }
+     &:after{
+     opacity: 0.6;
+     }
     }
+
     &:after{
         content: '';
         position: absolute;
@@ -54,13 +55,12 @@
         right: 0;
         bottom: 0;
     }
-     &:active{
-        outline: 3px solid $yellow;
-        outline-offset: -3px;
-            }
 
-        
-    }
+       &.active{
+         outline: 3px solid $yellow;
+         outline-offset: -3px;
+            }  
+     }
     }
 
     &__pic{
