@@ -44,13 +44,17 @@
     }
 
     @include tablets{
-        padding: 0 122px;
+        padding: 0 150px;
         text-align: center;
     }
 
     @include phones{
         padding: 0;
         text-align: left;
+    }
+
+    &>p{
+        opacity: .5;
     }
 }
 
@@ -63,7 +67,6 @@
 
     @include tablets{
         font-size: 36px;
-        padding: 0 47px;
     }
 
     @include phones{
