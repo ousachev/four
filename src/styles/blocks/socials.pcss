@@ -1,7 +1,20 @@
+.hero__links{
+    @include tablets{
+        margin-left: auto;
+        margin-right: 61px;
+    }
+
+    @include phones{
+        display: none;
+    }
+}
+
 .socials{
     display: flex;
     align-items: center;
+
 }
+
 
 .socials__item{
     margin-right: 40px;
@@ -20,4 +33,60 @@ fill: $grey;
 &:hover{
 fill:$yellow;
 }
+}
+
+//Социалки footer
+
+.socials-footer{
+    :nth-child(2){
+        
+        @include phones{
+            .socials__icon--footer{
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}
+
+.socials__item--footer{
+    width: 50px;
+    height: 50px;
+    border: solid 1px white;
+    border-radius: 50%;
+    position: relative;
+
+
+    @include tablets{
+        margin-bottom: 61px;
+    }
+
+    @include phones{
+        margin-right: 24px;
+    }
+
+    &:hover{
+        border-color: $yellow;
+
+        .socials__icon--footer{
+            fill: $yellow;
+        }
+    }
+}
+
+.socials__icon--footer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    
+    @include tablets{
+        transform:translate(-50%,-50%) scale(0.9);
+    }
+    
+    @include phones{
+        transform:translate(-50%,-50%) scale(0.8);
+    }
+    
 }

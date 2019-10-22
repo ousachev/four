@@ -7,6 +7,10 @@
     height: 100%;
     flex-direction: column;
     color: #fff;
+
+    @include desktopHd{
+        width: 95%;
+    }
 }
 
 .hero__header{
@@ -14,6 +18,10 @@
     justify-content: space-around;
     align-items: center;
     padding-top: 64px;
+
+    @include phones{
+        justify-content: space-between;
+    }
 }
 
 .hero__logo{
@@ -21,6 +29,10 @@
     font-size: 36px;
     font-weight: 800;
     line-height: 30px;
+
+    &:hover{
+        color: $yellow;
+    }
 }
 
 .hero__menu{
@@ -32,10 +44,9 @@
     flex: 0.9;
     align-items: center;
     justify-content: center;
-}
 
-.hero__buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include tablets{
+        flex: 0.7;
+    }
 }

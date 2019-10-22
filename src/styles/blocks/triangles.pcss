@@ -4,6 +4,10 @@
     width: 100%;
     display: flex;
     margin-top: -99px;
+
+    @include phones{
+        margin-top: -15px;
+    }
 }
 
 .triangle__left{
@@ -15,6 +19,15 @@
     bottom: 0;
     top: 0px;
     position: absolute;  
+
+    @include desktopHd{
+        border-bottom: 128px solid white;
+    }
+
+    @include phones{
+        border-bottom: 160px solid #fff;
+        top: -17px;
+    }
 }
 
 .triangle__right{
@@ -26,4 +39,13 @@
     bottom: 0;
     top: 15px;
     position: absolute;
+
+    @include desktopHd{
+        top: -16px;
+        border-left: 467px solid transparent;
+    }
+
+    @include phones{
+        top: -20px;
+    }
 }

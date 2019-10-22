@@ -11,4 +11,16 @@
     display: table-cell;
     padding-right: 92px;
     opacity: 0.15;
+
+    @include desktopHd{
+        padding-right: 82px;
+    }
+
+    @include tablets{
+        padding-right: 40px;
+    }
+
+    @include phones{
+        padding-right: 68px;
+    }
 }

@@ -1,19 +1,44 @@
 .bg__image{
-   z-index: -1;
    position: absolute;
 }
 
 .image__drum{
-    right: -620px;
+        right: -620px;
+
+    @include tablets{
+        z-index: -2;
+    transform: scale(1.5);
+    opacity: 0.8;
+    bottom: -87px;
+    }
 }
 
 .image__guitarist{
-    right: -800px;
-    top: 0;
+        right: -800px;
+        top: 0;
+
+    @include desktopHd{
+        right: -634px;
+        top: 100px; 
+    }
+
+    @include tablets{
+        right: -53rem;
+        top: 108px;
+        z-index: -1;
+        transform: scale(1.5);
+    }
 }
 
 .image__fog{
     bottom: -370px;
     transform: rotate(-20deg);
     left: -200px;
+    opacity: 0.1;
+
+    @include tablets{
+        opacity: 0.3;
+        transform: scale(2) rotate(136deg);
+        z-index: -3;
+    }
 }

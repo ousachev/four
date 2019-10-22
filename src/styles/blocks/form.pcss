@@ -1,16 +1,54 @@
 .container__form{
     padding: 200px 0 166px;
     color: white;
+
+    @include tablets{
+        padding: 100px 0;
+    }
+
+    @include phones{
+        margin-top: 50px;
+    }
 }
 
 .form__title{
     width: 70%;
+
+    @include tablets{
+        width: 100%;
+    }
+}
+
+.section-title--form{
+margin-bottom: 50px;
+
+    @include desktopHd{
+        margin-bottom: 80px;
+    }
+
+    @include tablets{
+        text-align: center;
+    }
+
+    @include phones{
+        font-size: 28px;
+        text-align: left;
+    }
 }
 
 .contact{
     display: flex;
     flex-wrap: wrap;
 
+    @include tablets{
+        justify-content: center;
+    }
+
+    @include phones{
+        flex-direction: column;
+        align-items: center;
+    }
+    
     &__wrapper{
         font-style: 16px;
         font-weight: 600;
@@ -21,13 +59,29 @@
         display: block;
         position: relative;
 
+        @include desktopHd{
+            width: 42%;
+        }
+        @include phones{
+            width: 100%;
+            margin-bottom: 15%;
+        }
+
         &--name{
             margin-right: 6%;
+
+            @include phones{
+                margin-right: 0;
+            }
         }
     
         &--text{
             width: 100%;
             margin-bottom: 55px;
+
+            @include desktopHd{
+                width: 90%;
+            }
         }
     
         &:hover .contact__input, .contact__input:focus{
@@ -65,7 +119,11 @@
             &::-webkit-input-placeholder { color: white !important; }
             &:-ms-input-placeholder { color: white !important; }
             &::-ms-input-placeholder { color: white !important; }
-            &::placeholder { color: white !important; } 
+            &::placeholder { color: white !important; }
+
+            @include phones{
+                font-size: 16px;
+            }
         }
     }
 
@@ -82,6 +140,11 @@
 font-weight: 700;
 text-transform: uppercase;
 
+    @include phones{
+        padding: 24px 79px;
+        max-width: 280px;
+    }
+
 &:hover{
     background-image:linear-gradient(to right, #ff8900 0%, #ff9d00 100%) ;
 }
@@ -89,7 +152,14 @@ text-transform: uppercase;
 
 .contact__input--text{
     resize: none;
+
+    @include phones{
+        padding: 0 0 0 45px;
+        line-height: 25px;
+        height: 130px;
+    }
 }
+
 
 .contact__icon{
     width: 30px;

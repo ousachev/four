@@ -1,20 +1,54 @@
 .slider{
     display: flex;
+
+    @include tablets{
+    flex-direction: column;
+    }
 }
 
 .slider__left{
     margin-right: 112px;
-    flex: 0.7;
+    width: 70%;
+
+    @include desktopHd{
+        margin-right: 154px;
+        width: 80%;
+    }
+
+    @include tablets{
+        width: 95%;
+        margin-bottom: 83px;
+        margin-right: 0;
+    }
+
+    @include phones{
+        width: auto;
+        margin: 0 -26px;
+        margin-bottom: 60px;
+    }
 }
 
 .slider__right{
-   flex: 0.35;
+   width: 30%;
+
+   @include desktopHd{
+       width: 20%;
+   }
+
+   @include tablets{
+       width: 95%;
+   }
 }
 
 .slider__wrapper{
     width: 100%;
     position: relative;
     z-index: 0;
+
+    @include desktopHd{
+        width: 61.0625rem;
+        height: 34.3125rem;
+    }
 
     &-number{
         color: #e6e6e6;
@@ -25,16 +59,62 @@
         z-index: -1;
         top: 77px;
         right: -117px;
+
+        @include desktopHd{
+            font-size: 400px;
+            top: 222px;
+            right: -170px;
+        }
+
+        @include tablets{
+            font-size:340px;
+            top: 100px;
+        }
+
+        @include phones{
+            display: none;
+        }
+    }
+}
+
+.slider__wrapper-inner{
+    width: auto;
+    height: auto;
+
+    @include desktopHd{
+        width: 977px;
+        height: 549px;
+    }
+
+    @include tablets{
+        width: auto;
+    height: auto;
+    }
+}
+
+.slider__previews{
+    position: absolute;
+    bottom: 51px;
+    right: 0;
+
+    @include desktop{
+    bottom: 10%;
+    right: 1px;
+    }
+
+    @include tablets{
+    right: 0;
+    bottom: 9%;
+    }
+
+    @include phones{
+        display: none;
     }
 }
 
 .previews{
     display: flex;
-    position: absolute;
-    bottom: 51px;
-    right: 0;
     
-        
     &__item{
      cursor: pointer;
      position: relative;
@@ -64,9 +144,17 @@
     }
 
     &__pic{
-        max-height: inherit;
-       
-       
+        max-height: inherit;    
+}
+
+.previews__item--invisible{
+    @include desktopHd{
+        display: block;
+    }
+
+    @include desktop{
+        display: none;
+    }
 }
 
 
@@ -77,6 +165,21 @@
     z-index: 1;
     right: -50px;
     bottom: 53px;
+
+    @include desktop{
+        right: -49px;
+        bottom: 11%;
+    }
+
+    @include tablets{
+        right: -57px;
+        bottom: 10%;
+    }
+
+    @include phones{
+        right: 0;
+        bottom: 0%;
+    }
 }
 
 .slider-buttons__item{
@@ -85,6 +188,11 @@
     background: #353e4e;
     position: relative;
     
+    @include tablets{
+        width: 58px;
+        height: 58px;
+    }
+
     &:hover{
         background: $yellow;
         .slider-buttons__item--slide--prev,

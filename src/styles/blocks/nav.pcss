@@ -1,33 +1,94 @@
+.header__nav{
+    display: block;
+
+    @include tablets{
+        display: none;
+    }
+}
+
 .nav__list{
     display: flex;
-    align-items: center;
+    align-items: center;  
 }
 
 .nav__item{
     margin-right: 61px;
+    position: relative;
+    cursor: pointer;
+
 
     &:last-child{
         margin-right: 0;
     }
 
+    &::after{
+        position: absolute;
+        display: none;
+        content: '';
+        top: 40px;
+        left: -40%;
+        right: 0;
+        bottom: 0;
+        border-bottom: solid $yellow;
+        border-width: 3px;
+        width: 185%;
+    }
     &:hover, 
     &.active{
-        color:$yellow;
-        text-decoration: underline;
+        @include tablets{
+            text-decoration: underline;
+        }
+
+        &::after{
+            display: block;
+            @include tablets{
+                display: none;
+            }
+        }
+
     }
+
+
 }
 
-.nav--footer{
+//Навигация Footer
+
+.nav-footer{
     margin-bottom: 60px;
     justify-content: left;
     margin-left: -30px;
 
-    .nav__item{
-        color: white;
-        transition: 0.2s ease-in-out all;
+    @include tablets{
+        margin-left: 0;
+        margin-bottom: 40px;
     }
 
-    .nav__item:hover{
+    @include phones{
+        margin-bottom: 30px;
+    }
+}
+
+
+.nav__list--footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav__item--footer{
+    padding-bottom: 10px;
+    color: white;
+    transition: 0.2s ease-in-out all;
+
+    &:hover{
         color: $yellow;
+    }
+
+    @include tablets{
+        margin-right: 52px;
+    }
+
+    @include phones{
+        margin-right: 81px;
+        margin-bottom: 16px;
     }
 }

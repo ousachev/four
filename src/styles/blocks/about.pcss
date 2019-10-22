@@ -1,13 +1,51 @@
 .about{
     margin-top: 281px;
     color: white;
+
+    @include desktopHd{
+        margin-top: 87px;
+    }
+
+    @include tablets{
+        margin-top: 0;
+        padding: 45px 0;
+    }
+
+    @include phones{
+        padding: 0;
+        margin-top: 75px;
+    }
 }
 .about__container{
     display: flex;
     justify-content: space-between;
+
+    @include desktopHd{
+        padding: 0px 334px;
+    }
+
+    @include phones{
+    flex-direction: column;
+    align-items: center;
+    }
 }
 
 .about__left{
 width: 40%;
 margin-bottom: 129px;
+
+@include desktopHd{
+    width: 35%;
+}
+
+@include tablets{
+    margin-bottom: 0;
+    width: 41%;
+}
+
+@include phones{
+    width: 100%;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
 }

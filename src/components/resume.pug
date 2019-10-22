@@ -3,7 +3,7 @@
 
 section.resume
     .container.resume__container
-        h2.section-title Мои работы
+        h2.section-title.section-title--resume Мои работы
         .slider
             .slider__left
                 .slider__wrapper
@@ -12,7 +12,7 @@ section.resume
                   .slider__previews
                     ul.previews
                       each item,index in pictures
-                             li.previews__item(class=`${index==0 ? 'active' : ''}`)
+                             li.previews__item(class=`${index==0 ? 'active' : index==3 ? 'previews__item--invisible' : ''}`)
                                +image(`${item}`,'previews__pic')
                   .slider__buttons
                     .slider-button

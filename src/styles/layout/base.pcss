@@ -1,7 +1,6 @@
 html {
-  @include desktop {
-    font-size: 16px;
-  }
+  font-size: 16px;
+  
   @include tablets {
     font-size: 14px;
   }
@@ -31,8 +30,17 @@ body {
   max-width: 1480px;
   width: 95%;
 
+  @include tablets{
+    width: 90%;
+  }
+
   @include phones {
     width: 85%;
+  }
+        
+  @include desktopHd {
+    max-width: inherit;
+    width: 100%;
   }
 }
 

@@ -4,7 +4,7 @@ section.hero
             .hero__logo
               .logo BA
             .hero__menu
-                nav.nav
+                nav.nav.header__nav
                   - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
                   ul.nav__list
                     each item, index in menu
@@ -17,6 +17,11 @@ section.hero
                     li.socials__item
                       a(href="").socials__link    
                         +icon(`${item}`,'socials__icon')  
+            .hero__mobile
+              a(href="#").hero__mobile-hamburger
+                span.hero__mobile-hamburger--decor
+                span.hero__mobile-hamburger--decor
+                span.hero__mobile-hamburger--decor
           .hero__content
             .hero-info
               h3.hero-info__desc Личный сайт<br> веб разработчика

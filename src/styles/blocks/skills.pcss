@@ -1,9 +1,23 @@
-.user__skills{
+.skills{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 96px;
+    margin-top: 80px;
+
+    @include desktopHd{
+        margin-top: 96px;
+    }
 } 
+
+.skills-row{
+    @include phones{
+        margin-bottom: 30px;
+        
+            &:last-child{
+                margin-bottom: 0;
+            }
+    }
+}
 
 .skills-row__title{
     font-size: 24px;
@@ -11,10 +25,21 @@
     line-height: 48px;
     color: $purple;
     margin-left: 25px;
+
+    @include phones{
+        text-align: center;
+        font-size: 21px;
+    }
 }
 
 .skills-row__list{
     display: flex;
+
+    @include phones{
+    display: grid;
+    grid-template-columns: 145px 145px;
+    justify-items: center;
+    }
 }
 
 .skill{
@@ -22,6 +47,16 @@
     height: 200px;
     fill: transparent;
     position: relative;
+
+    @include tablets{
+        width: 169px;
+        height: 169px;
+    }
+
+    @include phones{
+        width: 180px;
+        height: 180px;
+    }
 }
 
 .skill__circle--position--under{
@@ -32,8 +67,7 @@
 .skill__circle--position--above{
     stroke-width: 20px;
     stroke-dasharray: 421;
-    animation: animateCircle 100s linear infinite;
-    animation-play-state: paused;
+    stroke-dashoffset: 110;
 }
 
 
@@ -48,13 +82,4 @@
         opacity: 0.5;
         text-align: center;
         line-height: 30px;
-    }
-
-    @keyframes animateCircle{
-        from{
-            stroke-dashoffset:421;
-        }
-        to{
-            stroke-dashoffset:0;
-        }
     }

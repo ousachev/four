@@ -3,12 +3,28 @@
 }
 .footer__container{
     display: flex;
-    padding: 80px 0;
+    padding: 80px 0px;
     color: white;
+
+    @include desktopHd{
+        padding: 80px 160px;
+    }
+
+    @include phones{
+        flex-direction: column;
+    }
 }
 
 .footer__copyright{
     flex: 0.3;
+
+    @include tablets{
+        flex: 0.5;
+    }
+
+    @include phones{
+        margin-bottom: 57px;
+    }
 }
 .footer__data{
     flex: 0.9;
@@ -19,6 +35,10 @@ font-size: 48px;
 font-weight: 400;
 line-height: 30px;
 margin-bottom: 31px;
+
+@include tablets{
+    font-size: 50px;
+}
 }
 
 .copyright__name{
@@ -26,6 +46,27 @@ margin-bottom: 31px;
 font-weight: 700;
 line-height: 30px;
 margin-bottom: 34px;
+
+@include tablets{
+    font-size: 21px;
+}
+
+@include phones{
+    margin-bottom: 5px;
+}
+}
+
+.copyright__name>br{
+    @include phones{
+        display: none;
+    }
+}
+
+.copyright__name>&nbsp{
+    display: none;
+    @include phones{
+        display: block;
+    }
 }
 
 .copyright__desc{
@@ -35,12 +76,25 @@ font-weight: 400;
 line-height: 30px;
 }
 
-.footer__nav{
-    margin-bottom: 70px;
+.copyright__desc>&nbsp{
+    display: none;
+    @include phones{
+        display: block;
+    }
+}
+
+.copyright__desc>br{
+    @include phones{
+        display: none;
+    }
 }
 
 .footer__data-columns{
     display: flex;
+
+    @include tablets{
+        flex-direction: column;
+    }
 }
 
 .footer__data-col--left{
@@ -49,6 +103,15 @@ line-height: 30px;
 .footer__data-col--right{
     flex: 0.6;
     padding: 0 72px;
+
+    @include desktopHd{
+        padding: 0 162px;
+    }
+
+    @include tablets{
+        flex: 1;
+        padding: 0;
+    }
 }
 
 .footer__text{
@@ -57,30 +120,13 @@ line-height: 30px;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
-}
 
-.socials__item--footer{
-    width: 50px;
-    height: 50px;
-    border: solid 1px white;
-    border-radius: 50%;
-    position: relative;
-
-    &:hover{
-        border-color: $yellow;
-
-        .socials__icon--footer{
-            fill: $yellow;
-        }
+    @include tablets{
+        margin-bottom: 20px;
     }
 }
 
-.socials__icon--footer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
+
 
 .footer__ps{
     font-size: 16px;

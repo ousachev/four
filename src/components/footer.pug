@@ -3,21 +3,21 @@ footer.footer
         .footer__copyright
             .copyright__year &copy; 2019
             .copyright__info
-                .copyright__name Усачев<br />Олег
-                .copyright__desc Личный сайт<br />веб разработчика
+                .copyright__name Усачев &nbsp; <br/> Олег
+                .copyright__desc Личный сайт &nbsp; <br/> веб-разработчика
         .footer__data
-            nav.nav.footer__nav
+            nav.nav.nav-footer
                 - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
-                  ul.nav__list
+                  ul.nav__list.nav__list--footer
                     each item, index in menu
-                      li.nav__item
+                      li.nav__item.nav__item--footer
                         a(href="").nav__link #{item}
             .footer__data-columns
                 .footer__data-col.footer__data-col--left
                     article.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                     .footer__icons
                         - var icons = ['insta','vk','github']
-                            ul.socials
+                            ul.socials.socials-footer
                                 each item in icons
                                     li.socials__item.socials__item--footer
                                         a(href="").socials__link.socials__link--footer    
