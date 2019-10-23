@@ -1,4 +1,91 @@
 .welcome-section{
-    background: url(~images/content/Rock_fest.png) center center/cover no-repeat;
     height: 100%;
+    position: relative;
+    background: url(../images/content/parallax/fest2.png) center center/cover no-repeat;
+    z-index: 1;
+}
+
+.layer{
+    position: absolute;
+}
+
+.layer-1{
+    z-index: -9;
+    top: 31%;
+
+    @include phones{
+        top: 33%;
+    }
+}
+.layer-2{
+    z-index: -8;
+    top: 33%;
+
+    @include phones{
+        top: 33%;
+    }
+
+    @include tablets{
+        top: 31%;
+    }
+
+    @include desktop{
+        top:31%;
+    }
+}
+.layer-3{
+    z-index: -7;
+    top: 43%;
+
+    @include tablets{
+        top: 37%;
+    }
+}
+.layer-4{
+    top: 31%;
+    z-index: -8;
+
+    @include phones{
+        top: 32%;
+    }
+}
+.layer-5{
+    z-index: -6;
+    top: 40%;
+
+    @include desktop{
+        top:42%;
+    }
+
+    @include tablets{
+        top: 38%;
+    }
+
+    @include phones{
+        top: 36%;
+    }
+}
+.layer-6{
+    z-index: -5;
+    top: 38%;
+
+    @include phones{
+        top: 37%;
+    }
+}
+.layer-7{
+    top: 42%;
+    z-index: -6;
+
+    @include phones{
+        top: 37%;
+    }
+}
+.layer-8{
+    top: 66%;
+    opacity: 0.2;
+
+    @include phones{
+        top: 54%;
+    }
 }
