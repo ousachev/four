@@ -14,6 +14,10 @@
             fill: $yellow;
         }
     }
+
+    &.active,&:focus{
+        outline: none;
+    }
 }
 
 .reviews-slider__btn-icon{
@@ -23,6 +27,21 @@
 .reviews-slider__btn--left{
     transform: rotate(180deg);
     margin-right: 28px;
+}
+
+.reviews-slider__btn--disabled{
+    cursor: auto;
+    border: 1px solid gray;
+
+     .reviews-slider__btn-icon{
+        fill: gray;
+    }
+    &:hover{
+        .reviews-slider__btn-icon{
+            fill: gray;
+        }
+        border: 1px solid gray;
+    }
 }
 
 .reviews-slider{
@@ -35,31 +54,16 @@
 
 .reviews-slider__item{
     display: flex;
-    margin-right: 43px;
-    flex: 0.4;
-    
-    &:last-child{
-        margin-right: 0;
-    }
+    height: inherit;
+    padding: 0 60px;
+    padding-right:80px;
 
-    @include desktopHd{
-        margin-right: 100px;
-        flex: 0.31;
-    }
-
-    @include tablets{
-        flex: 0.5;
-        padding: 0 10px;
+    @include desktop{
+        padding: 0 20px;
     }
 
     @include phones{
-        flex: 1;
-    }
-}
-
-.reviews-slider__item-none{
-    @include phones{
-        display: none;
+        padding: 0;
     }
 }
 
@@ -67,6 +71,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-right: 80px;
 }
 
 .quote__text{

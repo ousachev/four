@@ -3,42 +3,85 @@
 }
 
 .image__drum{
-        right: -620px;
+    right: -25.75rem;
+    z-index: -2;
+    bottom: -200px;
+        z-index: -2;
+
+        @include desktopHd{
+            right: 12.25rem;
+            z-index: -2;
+            bottom: -228px;
+        }
+
+        @include desktop{
+            right: -282px;
+         bottom: -197px;
+        }
 
     @include tablets{
-        z-index: -2;
-    transform: scale(1.5);
-    opacity: 0.8;
-    bottom: -87px;
+        transform: scale(1.5);
+        opacity: .8;
+        bottom: -7.4375rem;
+        right: -24.75rem;
+    }
+
+    @include phones{
+        transform: scale(2);
+    opacity: .8;
+    bottom: 21.5625rem;
+    right: -9.75rem;
     }
 }
 
 .image__guitarist{
         right: -800px;
-        top: 0;
+        bottom: 0;
+        z-index: -1;
 
     @include desktopHd{
-        right: -634px;
+        right: -8.625rem;
         top: 100px; 
     }
 
+    @include desktop{
+        right: -40rem;
+    bottom: -2px;
+    }
+
     @include tablets{
-        right: -53rem;
-        top: 108px;
-        z-index: -1;
-        transform: scale(1.5);
+        right: -40rem;
+    bottom: 4.75rem;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    }
+
+    @include phones{
+        right: -25rem;
+        bottom: 16.75rem;
+    transform: scale(2);
     }
 }
 
 .image__fog{
     bottom: -370px;
-    transform: rotate(-20deg);
-    left: -200px;
-    opacity: 0.1;
+    transform: rotate(136deg);
+    left: 0px;
+    opacity: 0.3;
+    z-index: -3;
 
+    @include desktopHd{
+        bottom: -49.125rem;
+        left: -9.5rem;
+    }
+
+    @include desktop{
+        transform: rotate(-197deg);
+        bottom: -42px;
+        left: 107px;
+    }
     @include tablets{
-        opacity: 0.3;
         transform: scale(2) rotate(136deg);
-        z-index: -3;
+        left:  -1.3125rem;;
     }
 }

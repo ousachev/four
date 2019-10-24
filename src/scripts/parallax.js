@@ -1,6 +1,5 @@
 var parallax = (function(){
     var layer1 = document.querySelector('.layer-1');
-    var layer2 = document.querySelector('.layer-2');
     var layer3 = document.querySelector('.layer-3');
     var layer4 = document.querySelector('.layer-4');
     var layer5 = document.querySelector('.layer-5');
@@ -21,7 +20,6 @@ var parallax = (function(){
 
         init:function (wScroll){
             this.move(layer1,wScroll,40);
-            this.move(layer2,wScroll,50);
             this.move(layer3,wScroll,-25);
             this.move(layer4,wScroll,25);
             this.move(layer5,wScroll,15);

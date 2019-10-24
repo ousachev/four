@@ -1,0 +1,27 @@
+section(id="five").reviews 
+        .container.container__reviews
+          .reviews__title
+            h2.section-title.reviews__title-text Что обо мне говорят
+            .reviews-slider__btns
+                a.reviews-slider__btn.reviews-slider__btn--left
+                    +icon('arrow-down', 'reviews-slider__btn-icon arrow')
+                a.reviews-slider__btn.reviews-slider__btn--right
+                    +icon('arrow-down', 'reviews-slider__btn-icon arrow')
+          ul.reviews-slider
+            swiper(ref="mySwiper" :options="swiperOption")
+              quote(v-for = "opinion in quotes" :opinion = "opinion")
+
+script#quote(type="x-template")
+  swiper-slide
+    li.reviews-slider__item
+      .reviews-slider__image
+        +icon('quote', 'reviews-slider__icon')
+      .quote  
+        p.quote__text {{opinion.text}}
+        .quote__author
+          .user.user--horizontal
+              .user__avatar
+                  img.user__avatar-pic(:src="opinion.photo")
+              .user__desc
+                  .user__name {{opinion.name}}
+                  .user__prof {{opinion.position}}

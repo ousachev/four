@@ -1,0 +1,26 @@
+.header__popup
+        .header__popup-right
+            a(href="").header__popup-close
+              span.close__btn
+            ul.nav_list.nav-popup
+                .nav__item-popup
+                    a(href="#first").nav__link Главная
+                .nav__item-popup
+                    a(href="#second").nav__link Обо мне    
+                .nav__item-popup
+                    a(href="#third").nav__link Навыки
+                .nav__item-popup
+                    a(href="#four").nav__link Работы
+                .nav__item-popup
+                    a(href="#five").nav__link Отзывы
+                .nav__item-popup
+                    a(href="#six").nav__link Связаться
+            .hero__links.hero__links-popup
+                    - var icons = ['insta','vk','github']
+                    ul.socials
+                        each item in icons
+                            li.socials__item
+                                a(href="").socials__link    
+                                    +icon(`${item}`,'socials__icon')
+            
+            
