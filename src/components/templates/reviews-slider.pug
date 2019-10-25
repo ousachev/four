@@ -3,9 +3,9 @@ section(id="five").reviews
           .reviews__title
             h2.section-title.reviews__title-text Что обо мне говорят
             .reviews-slider__btns
-                a.reviews-slider__btn.reviews-slider__btn--left
+                button(type="button").reviews-slider__btn.reviews-slider__btn--left
                     +icon('arrow-down', 'reviews-slider__btn-icon arrow')
-                a.reviews-slider__btn.reviews-slider__btn--right
+                button(type="button").reviews-slider__btn.reviews-slider__btn--right
                     +icon('arrow-down', 'reviews-slider__btn-icon arrow')
           ul.reviews-slider
             swiper(ref="mySwiper" :options="swiperOption")
