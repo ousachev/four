@@ -11,6 +11,10 @@
     right: -3000px;
 
     transition: right 1s cubic-bezier(0, 1, 0, 1);
+    
+    @include phones{
+        width: 100%;
+    }
 }
 
 .header__popup-right{
@@ -35,6 +39,11 @@
         .close__btn::after{
             background-color: $yellow;
         }
+    }
+
+    @include phones{
+        top: 48px;
+        right: -30px;
     }
 }
 
