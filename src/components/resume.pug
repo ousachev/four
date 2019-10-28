@@ -4,32 +4,4 @@
 section(id="four").resume
     .container.resume__container
         h2.section-title.section-title--resume Мои работы
-        .slider
-            .slider__left
-                .slider__wrapper
-                  .slider__wrapper-inner
-                    +image("content/resume.png","slider__fullpic")
-                  .slider__previews
-                    ul.previews
-                      each item,index in pictures
-                             li.previews__item(class=`${index==0 ? 'active' : index==3 ? 'previews__item--invisible' : ''}`)
-                               +image(`${item}`,'previews__pic')
-                  .slider__buttons
-                    .slider-button
-                          button.slider-buttons__item
-                            +icon("arrow-down","slider-buttons__item--slide--prev arrow")
-                          button.slider-buttons__item
-                            +icon("arrow-down","slider-buttons__item--slide--next arrow")
-                  .slider__wrapper-number 2
-            .slider__right
-              ul.resume__tags
-                li.resume__tags-item HTML
-                li.resume__tags-item CSS
-                li.resume__tags-item JavaScript
-              .resume__text
-                    h2.section-title.resume__title Сайт школы образования
-                    .resume__desc-text 
-                       p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!            
-                    a.iconed-link
-                        +icon("link","iconed-link__pic")
-                        .iconed-link__text Посмотреть сайт
+        #slider-component

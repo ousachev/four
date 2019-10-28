@@ -2,10 +2,6 @@
     background-color: #f8f8f8;
     padding: 139px 39px;
 
-    @include desktopHd{
-        padding: 150px 150px;
-    }
-
     @include tablets{
         padding: 139px 0px;
     }
@@ -16,6 +12,10 @@
     height: 100%;
     flex-direction: column;
     justify-content: center;
+
+    @include desktopHd{
+        width: 69%;
+    }
 }
 
 .section-title--resume{

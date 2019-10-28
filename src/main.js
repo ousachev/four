@@ -8,3 +8,4 @@ import "./scripts/slider";
 import "./scripts/parallax";
 import "./scripts/parallax-reviews";
 import "./scripts/popup";
+import "./scripts/slider-works";
