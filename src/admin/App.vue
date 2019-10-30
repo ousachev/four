@@ -1,15 +1,16 @@
 <template lang="pug">
 .wrapper
   .popup
-    .container.container--popup
-      form.form-login(@submit.prevent="login")
-        h2.form-login__headline Авторизация
-        label.form-login__label.form-login__label--login Логин
-          input(required).form-login__input
-        label.form-login__label.form-login__label--password Пароль
-          input(required).form-login__input
-        button(type= "submit").button.button-login-submit Отправить
-        button(type = "button").button.button-login-exit 
+    .popup__filter
+      .container.container--popup
+        form.form-login(@submit.prevent="login")
+          h2.form-login__headline Авторизация
+          label.form-login__label.form-login__label--login Логин
+            input(required).form-login__input
+          label.form-login__label.form-login__label--password Пароль
+            input(required).form-login__input
+          button(type= "submit").button.button-login-submit Отправить
+          button(type = "button").button.button-login-exit 
   .wrapper__filter
     header.header
       .container.container--header
@@ -301,10 +302,44 @@
 @import "../styles/layout/*.pcss";
 input{outline: none;border: none;}
 button{background: transparent;}
-::placeholder{background: white;}
+::placeholder{background: white; @include tablets{word-wrap: wrap;}}
+
+/* Окно Авторизации*/
+
+.popup {height: 100vh; width: 100%; background: url('../images/content/background.png') no-repeat center;
+background-size: cover;z-index: -2}
+.popup__filter{background: #3c4b5e; opacity: 0.9; height: 100%;width: 100%;z-index: -1}
+.container--popup {display: flex; justify-content: center; align-items: center; height: 100%;z-index: 10;}
+.form-login {background: #fff; position: relative; padding: 50px; text-align: center;
+@include phones {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; }}
+.form-login__label {position: relative; display: flex; flex-direction: column; margin-bottom: 40px; color: #d3d4d9; padding: 5px 5px 15px;padding-left: 40px;  text-align: left; @include phones {margin-bottom: 50px;} 
+border-bottom: 1px solid #414d63; 
+}
+.form-login__input {margin-top: 20px; color:#414d63; font-weight: 700}
+.form-login__label--login:before{content:''; position: absolute; height: 30px; width: 30px; 
+ background: svg-load('user.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; bottom: 15px; left: 0}
+.form-login__label--password:before{content:''; position: absolute; height: 30px; width: 30px; background: svg-load('key.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; bottom: 15px; left: 0}
+.button-login-exit {position: absolute; top: 15px; right: 15px; height: 15px; width: 15px; background: svg-load('close.svg', fill = #454c5f, width = 100%, height = 100% ) no-repeat center;}
+.form-login__headline {width: 100%; text-align: center; font-size: 30px; font-weight: 600; margin-bottom: 40px; @include phones {margin-bottom: 50px; } }
+.button-login-submit  {
+    border-radius: 40px 5px;
+    background: linear-gradient( 90deg, rgb(147,0,232) 0%, rgb(111,0,235) 48%, rgb(74,0,237) 100%);
+    padding: 25px 20px;
+    color: #fff;
+    font-weight:700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {background: linear-gradient( 90deg, rgb(147,0,232) 60%, rgb(111,0,235) 100%); transition: 0.3s;}
+  }
+
+  /*Wrapper Настройки*/
+
 .wrapper{font-family: 'Open Sans', Helvetica, sans-serif;font-size: 16px;line-height: 1.42;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: $text-color;background: url('../images/content/cloud.jpg') no-repeat center;background-size: cover;}
 .wrapper__filter {background:rgba(255, 255, 255, 0.9)}
 .container {@include phones{width:100%}}
+
+/* Header */
+
 .header {background: #44436c; color: #fff; padding: 10px 0px }
 .container--header {display: grid; align-items: center;grid-template-columns: 1.2fr 1.5fr 2.5fr 1fr;grid-template-rows: 1fr;grid-template-areas: 'userpic admin . exit'}
 .userpic {grid-area: userpic; font-weight: bold; display: flex; align-items: center}
@@ -313,11 +348,19 @@ button{background: transparent;}
 .userpic__name{font-size: 18px;}
 .admin {grid-area: admin; color: rgba(255, 255, 255, 0.5);font-size: 14px; padding-left: 20px}
 .exit {grid-area: exit; color: rgba(255, 255, 255, 0.5); text-align: right; font-size: 16px; text-decoration: underline;&:hover{color: rgba(255, 255, 255, 0.8)}}
+
+/* Навигация */
+
 .navigation {background: #fff;}
 .navigation__list {display: flex; list-style: none;  color:#60697c; padding: 0}
 .navigation__item {border-bottom: 2px solid transparent; padding: 15px;
+&:hover,&:focus{border-bottom: 2px solid #383ace; color: #383ace;}
 }
-.navigation__item--active {border-bottom: 2px solid #383ace; color: #383ace}
+.navigation__item--active {border-bottom: 2px solid #383ace; color: #383ace;}
+
+
+/* Блок Обо мне*/
+
 .name__desc {display: flex; align-items: baseline;}
 @include phones {
   .name__desc{flex-direction: column;
@@ -335,6 +378,10 @@ left: -25px;
 height: 20px; width: 20px;
 background: url('../images/content/button.png') no-repeat center;
 background-size: contain}
+&:hover,&:focus{
+  text-decoration: underline;
+  color: #383ace;
+}
 }
 .button--big {
 height: 35px; width: 35px;
@@ -348,11 +395,14 @@ position: relative;
   height: 20px; width: 20px; margin-right: 10px; background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;}
 .button--cross {height: 20px; width: 20px; background: svg-load('close.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;}
 .button--edit {height: 20px; width: 20px; background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center;}
+.button--edit:hover,.button--edit:focus{background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100%;)}
 .button--delete {height: 20px; width: 20px; background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; margin-left: 10px;}
+.button--delete:focus,.button--delete:hover{background: svg-load('trash.svg', fill = $yellow, width = 100%, height = 100% ) no-repeat center;}
 .name__skills {display: grid; grid-template-rows: 1fr;
 grid-template-columns: 1fr 1fr;
 @include phones {grid-template-columns: 1fr} }
-.button--submit {background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); color:#fff; padding: 20px; border-radius: 35px;  text-transform: uppercase; margin: 0 auto; cursor: pointer;}
+.button--submit {background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); color:#fff; padding: 20px; border-radius: 35px;  text-transform: uppercase; margin: 0 auto; cursor: pointer;
+&:hover,&:focus{background: linear-gradient( 0deg, rgb(63,53,203) 0%, rgb(32,80,220) 48%, rgb(0,106,237) 100%);}}
 .section-block {background: #fff;
 padding: 25px; 
 margin: 10px;
@@ -363,16 +413,16 @@ display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 grid-template-areas: "name"
-"old1"
-"old2"
-"old3"
+"skill1"
+"skill2"
+"skill3"
 "new"
 }
 .name__skills-form {padding: 15px 0; border:none; display: flex; justify-content: space-between; align-items: center}
 .skill-form--name {grid-area: name; align-items: center; color: #4e586d; font-size: 18px; font-weight: 700}
 .name__skills-form--newskill   {grid-area: new; justify-content: flex-end}
 .skill-name {width: 60%; border-bottom: 1px solid transparent; margin-left: 10px; padding-bottom: 10px;}
-.skill-name--editing {width: 60%; border-bottom: 1px solid #000; margin-left: 10px;}
+.skill-name--editing {width: 60%; border-bottom: 1px solid #000; margin-left: 10px; @include tablets{width:77%}}
 .form-radio {display: flex;}
 .form-radiobutton {margin: 10px}
 .new-skill{width: 40%; border-bottom: 1px solid #000; margin-left: 10px;}
@@ -382,6 +432,9 @@ background: white
 }
 @include tablets {.work-skill {width:30%}}
 .skill-value--edited {border-bottom: 1px solid transparent; font-size: 18px; text-align: center}
+
+/* Блок Работы*/
+
 .edit-card {display: grid; grid-template-columns: 1fr 1fr;
 grid-template-rows: 0.5fr 3fr 3fr; grid-template-areas: "name name"
 "download content"
@@ -405,6 +458,9 @@ grid-template-rows: 0.5fr 3fr 3fr; grid-template-areas: "name name"
 @include tablets {justify-content:center}}
 .button--edit-submit {margin: 0 0; margin-left: 20px;}
 .edit-card__reset {color: #383bcf}
+
+/* Добавить работу Блок */
+
 .edited-blocks {display: grid; grid-template-columns: 1fr 1fr 1fr;
 grid-template-rows: 1fr;
 @include tablets {grid-template-columns:1fr 1fr}
@@ -418,11 +474,9 @@ grid-template-rows: 1fr;
     padding: 30px; 
     background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); 
     color:#fff; 
-
     @include phones {
       margin: 0
       } 
-
     }
 
 .button__pic {border-radius: 50%; font-size: 60px; border: 2px solid #fff; width: 60px; margin: 0 auto; height: 60px;     display: flex;
@@ -453,6 +507,9 @@ background: svg-load('close.svg', fill = #c92e2e, width = 100%, height = 100% ) 
 .edited-card__text {color: #7a8191; margin-top: 20px;}
 .edited-card__name {font-weight: 700;}
 .edited-card__link {color: #4548d2; margin-top: 20px;}
+
+/* Блок Отзывы */
+
 .edited-card--feedback {padding: 15px;
 }
 .edited-card__description--feedback {padding: 0}
@@ -478,30 +535,6 @@ grid-template-columns: 1fr 2fr 0.25fr;
 .edit-card__label--feedback {width: 48%; @include tablets {width: 100%}}
 .edit-card__input--feedback {padding-left: 0}
 .edit-card__textarea--feedback {margin-left: 0; margin-right: 0;}
-.popup {height: 100vh; width: 100%; background: url('../images/content/background.png') no-repeat center;
-background-size: cover;}
-.container--popup {display: flex; justify-content: center; align-items: center; height: 100%;}
-.form-login {background: #fff; position: relative; padding: 50px; text-align: center;
-@include phones {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; }}
-.form-login__label {position: relative; display: flex; flex-direction: column; margin-bottom: 40px; color: #d3d4d9; padding: 5px;padding-left: 40px;  text-align: left; @include phones {margin-bottom: 50px;} 
-border-bottom: 1px solid #414d63; 
-}
-.form-login__input {margin-top: 20px; color:#414d63; font-weight: 700}
-.form-login__label--login:before{content:''; position: absolute; height: 30px; width: 30px; 
- background: svg-load('user.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; bottom: 5px; left: 0}
-.form-login__label--password:before{content:''; position: absolute; height: 30px; width: 30px; background: svg-load('key.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; bottom: 5px; left: 0}
-.button-login-exit {position: absolute; top: 15px; right: 15px; height: 15px; width: 15px; background: svg-load('close.svg', fill = #454c5f, width = 100%, height = 100% ) no-repeat center;}
-.form-login__headline {width: 100%; text-align: center; font-size: 30px; font-weight: 600; margin-bottom: 40px; @include phones {margin-bottom: 50px; } }
-.button-login-submit  {
-    border-radius: 40px 5px;
-    background: linear-gradient( 90deg, rgb(147,0,232) 0%, rgb(111,0,235) 48%, rgb(74,0,237) 100%);
-    padding: 25px 20px;
-    color: #fff;
-    font-weight:700;
-    text-transform: uppercase;
-    transition: 0.3s;
-    &:hover {background: linear-gradient( 90deg, rgb(147,0,232) 60%, rgb(111,0,235) 100%); transition: 0.3s;}
-  }
 </style>
 
 
