@@ -2,23 +2,30 @@ section(id="six").form
     .container.container__form
         .form__title
             h2.section-title.section-title--form Связаться со мной
-            form.contact
-                .contact__wrapper.contact__wrapper--name
+            form.contact(@submit.prevent="submitForm")
+                .contact__wrapper.contact__wrapper--name(:class="{error:!nameValid}")
                     label.contact__label Введите ваше имя
                     .contact__wrapper-row
                         .contact__icon-wrapper
                             +icon('user', 'contact__icon')
-                        input.contact__input.contact__input--name(type="text" name="name" placeholder="Ковальчук Дмитрий" onFocus="this.placeholder='';" required)
-                .contact__wrapper.contact__wrapper--email
+                        input.contact__input.contact__input--name(type="text" name="name" placeholder="Ковальчук Дмитрий" @input="validateName" onFocus="this.placeholder='';" required)
+                        .contact__tooltip {{nameError}}
+                .contact__wrapper.contact__wrapper--email(:class="{error: !emailValid}")
                     label.contact__label Введите ваш email
                     .contact__wrapper-row
                         .contact__icon-wrapper
                             +icon('envelope', 'contact__icon')
-                        input.contact__input.contact__input--email(type="email" name="email" placeholder="loftschool@study.com" onFocus="this.placeholder='';")
-                .contact__wrapper.contact__wrapper--text
+                        input.contact__input.contact__input--email(type="email" name="email" placeholder="loftschool@study.com" @input="validateEmail" onFocus="this.placeholder='';")
+                        .contact__tooltip {{emailError}}
+                .contact__wrapper.contact__wrapper--text(:class="{error !messageValid}")
                     label.contact__label Сообщение к письму
                     .contact__wrapper-row
                         .contact__icon-wrapper
                             +icon('message', 'contact__icon')
-                        textarea.contact__input.contact__input--text(name="text" placeholder="Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса")
-                button.contact__submit-button Отправить
+                        textarea.contact__input.contact__input--text(name="text" @input="validateMessage" onFocus="this.placeholder=''" placeholder="Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса")
+                        .contact__tooltip {{messageError}}
+                button(@click.prebent="submitForm").contact__submit-button Отправить
+    .overlay(:class="{disabled:overlayHidden}" @click="hideOverlay")
+        .overlay__content
+            .overlay__message {{resultMessage}}
+            button.overlay__close(@click="hideOverlay") Закрыть

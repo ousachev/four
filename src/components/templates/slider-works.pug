@@ -6,18 +6,22 @@ script(type="text/x-template")#slider-container
                 :current-work="currentWork"
                 @slide="handleSlide"
                 :current-index="currentIndex"
+                @previewClick = "handlePreviewClick"
             )
         info(:current-work="currentWork")
         
 
 
 script(type="text/x-template")#slider-display
-    .slider__wrapper(:data-slide="currentIndex + 1")
+    .slider__wrapper(
+        :data-slide="currentIndex + 1"
+        )
         .slider__wrapper-inner
             img(:src="currentWork.photo").slider__fullpic
         previews(
             :works="works"
             :current-work = "currentWork"
+            @previewClick="$emit('previewClick', $event)"
         )
         btns(
             @slide="$emit('slide',$event)"
@@ -30,6 +34,7 @@ script(type="text/x-template")#slider-previews
             v-for="work in works"
             :key="work.id"
             :class="{active: work.id===currentWork.id}"
+            @click.prevent="$emit('previewClick',work.id)"
             )
             img(:src="work.photo" alt="").previews__pic
 
