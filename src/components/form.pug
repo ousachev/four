@@ -17,7 +17,7 @@ section(id="six").form
                             +icon('envelope', 'contact__icon')
                         input.contact__input.contact__input--email(type="email" name="email" placeholder="loftschool@study.com" @input="validateEmail" onFocus="this.placeholder='';")
                         .contact__tooltip {{emailError}}
-                .contact__wrapper.contact__wrapper--text(:class="{error !messageValid}")
+                .contact__wrapper.contact__wrapper--text(:class="{error: !messageValid}")
                     label.contact__label Сообщение к письму
                     .contact__wrapper-row
                         .contact__icon-wrapper

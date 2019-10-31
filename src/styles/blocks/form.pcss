@@ -169,3 +169,34 @@ text-transform: uppercase;
     position: absolute;
     top: 40px;
 }
+
+.overlay{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #424f5f;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay.disabled{
+    display: none;
+}
+
+.overlay__content{
+padding: 67px 100px;
+background: white;
+top: 50%;
+left: 50%;
+}
+
+.overlay__close{
+    border-radius: 40px 5px;
+    background: linear-gradient(90deg,rgb(147, 0, 232) 0%,rgb(111, 0, 235) 48%, rgb(74, 0, 237) 100%
+  )
+}

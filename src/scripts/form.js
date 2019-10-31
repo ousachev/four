@@ -18,7 +18,7 @@ new Vue({
     methods:{
         validateName(){
             this.name=this.$el.querySelector('.contact__input--name').value;
-            if (this.name.lenght<3){
+            if (this.name.length<3){
                 this.nameValid = false;
                 this.nameError = 'Слишком короткое имя';
             }else{
@@ -28,7 +28,7 @@ new Vue({
             return this.nameValid;
         },
         validateEmail(){
-            var regex = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/;
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             this.email = this.$el.querySelector('.contact__input--email').value;
             if (this.email.length <8){
                 this.emailValid = false;
@@ -43,8 +43,8 @@ new Vue({
             return this.emailValid;
         },
         validateMessage (){
-            this.message = this.$el.querySelector('.contact__input--message').value;
-            if (this.message.lenght<20){
+            this.message = this.$el.querySelector('.contact__input--text').value;
+            if (this.message.length<20){
                 this.messageValid = false;
                 this.messageError = 'Слишком короткое собщение';
             }else{
