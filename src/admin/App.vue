@@ -42,76 +42,111 @@
               .form-yesno-buttons
                 button(type="submit").button.button--green 
                 button(type="reset").button.button--cross 
-
-            form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-            
+            hr.form-divider
+            .form__content
+              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+            .form__add
               input( placeholder="Новый навык" v-model = "newSkillName" ).new-skill
-              input( type="number" max = "100" placeholder="100%" v-model ="percent").skill-value
+              .skill-box
+                input( type="number" min="0" max = "100" placeholder="100" v-model ="percent").skill-value.value-bold
               button(type="submit").button.button--big 
-               span.button--text +
+                span.button--text +
               
           .name__skills-card.section-block 
               form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                p.skill-name Workflow
+                input(type="text" placeholder="Workflow").skill-name.value-bold
                 .form-yesno-buttons
                   button(type="submit").button.button--edit
-              form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                input(type="text" placeholder="GIT" disabled="disabled").work-skill
-                input(type="text" placeholder="30%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
-              form.name__skills-form.name__skills-form--skill
+              hr.form-divider
+              .form__content
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                  input(type="text" placeholder="GIT").work-skill.value-bold
+                  .skill-box
+                    input(type="number" min="0" max="100" placeholder="30" ).skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill
+              
+                  input(type="text" placeholder="Terminal").work-skill.value-bold
+                  .skill-box
+                     input(type="number" min="0" max="100" placeholder="45").skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')   
+              
+                  input(type="text" placeholder="GULP").work-skill.value-bold
+                  .skill-box
+                    input(type="number" min="0" max="100" placeholder="90").skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
             
-                input(type="text" placeholder="Terminal" disabled="disabled").work-skill
-                input(type="text" placeholder="45%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
-              form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-            
-                input(type="text" placeholder="GULP" disabled="disabled").work-skill
-                input(type="text" placeholder="90%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
+                  input(type="text" placeholder="Webpack").work-skill.value-bold
+                  .skill-box
+                    input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+              .form__add
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
               form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                input(required placeholder="Новый навык").new-skill
-                input(required type="number" placeholder="100%").skill-value
-                button(type="submit").button.button--big
-                  span.button--text +
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+                  input(required placeholder="Новый навык" ).new-skill
+                  .skill-box
+                    input(required type="number" placeholder="100" min="0" max="100").skill-value.value-bold
+                  button(type="submit").button.button--big
+                    span.button--text +
           .name__skills-card.section-block 
               form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                p.skill-name Frontend
+                input(type="text" placeholder="Frontend").skill-name.value-bold
                 .form-yesno-buttons
                   button(type="submit").button.button--edit
-              form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                input(type="text" placeholder="HTML5" disabled="disabled").work-skill
-                input(type="text" placeholder="100%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
-              form.name__skills-form.name__skills-form--skill
-            
-                input(type="text" placeholder="CSS3" disabled="disabled").work-skill
-                input(type="text" placeholder="90%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
-              form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-            
-                input(type="text" placeholder="JavaScript" disabled="disabled").work-skill
-                input(type="text" placeholder="80%" disabled="disabled").skill-value.skill-value--edited
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-                  button(type="button").button.button--delete
-        
+              hr.form-divider
+              .form__content
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                  input(type="text" placeholder="HTML5").work-skill.value-bold
+                  .skill-box
+                      input(type="number" min="0" max="100" placeholder="100" ).skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill
+              
+                  input(type="text" placeholder="CSS3").work-skill.value-bold
+                  .skill-box
+                      input(type="number" min="0" max="100" placeholder="90" ).skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+              
+                  input(type="text" placeholder="JavaScript").work-skill.value-bold
+                  .skill-box
+                      input(type="number" min="0" max="100" placeholder="80").skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+              
+                  input(type="text" placeholder="jquery и Vue.js").work-skill.value-bold
+                  .skill-box
+                    input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                    button(type="button").button.button--delete
+          
                 
 
               form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill')   
             
                 input(required placeholder="Новый навык").new-skill
-                input(required type="number" placeholder="100%").skill-value
+                .skill-box
+                    input(required type="number" min="0" max="100" placeholder="100").skill-value.value-bold
                 button(type="submit").button.button--big
                   span.button--text +
        section.section--works
@@ -122,14 +157,14 @@
               input.inputfile(type="file" required name="file" id="file") 
               label.inputfile__label(for="file")
                 .inputfile__text Перетащите или нажмите для загрузки изображения
-                .button.button--submit загрузить
+                button.button.button--submit загрузить
             .edit-card__content
               label.edit-card__label Название
                 input( required placeholder = "Сайт для туристической компании").edit-card__input
               label.edit-card__label Ссылка
                 input(required placeholder = "Anextour.com").edit-card__input
               label.edit-card__label Описание
-                textarea( rows="5" required placeholder="Сайт для реализации вашей мечты, путешествия в дальние страны с невероятным уровнем сервиса").edit-card__textarea
+                textarea( rows="5" required placeholder="Сайт для реализации вашей мечты, путешествия в дальние страны с невероятным уровнем сервиса").edit-card__textarea.edit-card__input
               label.edit-card__label Добавление тега
                 input(required placeholder = "HTML,").edit-card__input
               ul.edit-card__taglist
@@ -154,7 +189,7 @@
                 img(src='../images/content/slider/1.jpg').edited-card__picture
               .edited-card__description
                 .edited-card__name Сайт туристической компании
-                .edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
                 a(href="#").edited-card__link Anextour.com
                 .edited-card__buttons
                   button(type="button").button.button--edit-edited Править
@@ -164,7 +199,7 @@
                 img(src='../images/content/slider/1.jpg').edited-card__picture
               .edited-card__description
                 .edited-card__name Сайт туристической компании
-                .edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
                 a(href="#").edited-card__link Anextour.com
                 .edited-card__buttons
                   button(type="button").button.button--edit-edited Править
@@ -174,7 +209,7 @@
                 img(src='../images/content/slider/2.jpg').edited-card__picture
               .edited-card__description
                 .edited-card__name Сайт туристической компании
-                .edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
                 a(href="#").edited-card__link Anextour.com
                 .edited-card__buttons
                   button(type="button").button.button--edit-edited Править
@@ -183,7 +218,7 @@
 
           h1.name__desc-text Блок &laquo;Отзывы&raquo;
           form.section-block.edit-card.edit-card--feedback(@submit.prevent = "feedbackEdit")
-            h2.edit-card__name Добавить отзыв
+            h2.edit-card__name Новый отзыв
             .edit-card__download-area.edit-card__download-area--feedback
               input.inputfile(type="file" required name="file" id="userpic") 
               label.inputfile__label(for="userpic")
@@ -205,7 +240,7 @@
                 button(type = "submit").button.button--submit.button--edit-submit сохранить
 
           .edited-blocks
-            button.button.button--add-card
+            button.button.button--add-card.button--add-card--feedback
               .button__pic +
               p.button__name Добавить отзыв
             .section-block.edited-card.edited-card--feedback
@@ -214,12 +249,12 @@
                   img(src='../images/content/loft/vova.png').edited-card__speaker-picture
                 .edited-card__speaker-textinfo
                   p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-position Преподаватель
+                  p.edited-card__speaker-occ Преподаватель
               
              
               .edited-card__description.edited-card__description--feedback
               
-                .edited-card__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
 
 
             
@@ -232,12 +267,12 @@
                   img(src='../images/content/loft/vova.png').edited-card__speaker-picture
                 .edited-card__speaker-textinfo
                   p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-position Преподаватель
+                  p.edited-card__speaker-occ Преподаватель
               
              
               .edited-card__description.edited-card__description--feedback
               
-                .edited-card__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
 
 
             
@@ -250,12 +285,12 @@
                   img(src='../images/content/loft/vova.png').edited-card__speaker-picture
                 .edited-card__speaker-textinfo
                   p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-position Преподаватель
+                  p.edited-card__speaker-occ Преподаватель
               
              
               .edited-card__description.edited-card__description--feedback
               
-                .edited-card__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
 
 
             
@@ -268,12 +303,12 @@
                   img(src='../images/content/loft/vova.png').edited-card__speaker-picture
                 .edited-card__speaker-textinfo
                   p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-position Преподаватель
+                  p.edited-card__speaker-occ Преподаватель
               
              
               .edited-card__description.edited-card__description--feedback
               
-                .edited-card__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
 
 
             
@@ -300,10 +335,22 @@
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/*.pcss";
-input{outline: none;border: none;}
-button{background: transparent;}
-::placeholder{background: white; @include tablets{word-wrap: wrap;}}
 
+/* Настройки */
+.container--maincontent{width: 94%;}
+input{outline: none;border: none;
+&::-webkit-outer-spin-button,
+&::-webkit-inner-spin-button{
+  -webkit-appearance: none;}}
+  input[type='number']{
+     -moz-appearance: textfield;
+  }
+button{background: transparent; font-weight: bold;}
+::placeholder{background: white; @include tablets{word-wrap: wrap;} opacity: 0.6;}
+.value-bold{&::-webkit-input-placeholder { font-weight:400;opacity: 1;}}
+.skill-name{&::-webkit-input-placeholder { color: $admin; font-weight:600;opacity: 1;}}
+.skill-name--editing{&::-webkit-input-placeholder {font-weight:400;opacity: 0.6;}}
+.edit-card__input{&::-webkit-input-placeholder {color:$admin;opacity: 1;font-weight:600}}
 /* Окно Авторизации*/
 
 .popup {height: 100vh; width: 100%; background: url('../images/content/background.png') no-repeat center;
@@ -353,8 +400,8 @@ border-bottom: 1px solid #414d63;
 
 .navigation {background: #fff;}
 .navigation__list {display: flex; list-style: none;  color:#60697c; padding: 0}
-.navigation__item {border-bottom: 2px solid transparent; padding: 15px;
-&:hover,&:focus{border-bottom: 2px solid #383ace; color: #383ace;}
+.navigation__item {border-bottom: 2px solid transparent; padding: 15px;margin-right: 15px;
+&:hover,&:focus{border-bottom: 2px solid #383ace; color: #383ace;}&:last-child{margin-right: 0;}
 }
 .navigation__item--active {border-bottom: 2px solid #383ace; color: #383ace;}
 
@@ -366,7 +413,7 @@ border-bottom: 1px solid #414d63;
   .name__desc{flex-direction: column;
     margin-bottom: 20px;
     align-items: flex-start;}}
-.name__desc-text {font-weight: 600; font-size: 21px; padding: 30px 0 0 10px; margin: 10px 30px 50px 0;
+.name__desc-text {font-weight: 700; font-size: 21px; padding: 30px 0 0 10px; margin: 10px 60px 50px 0;
 @include phones {padding: 15px 0; margin-right: 0;}}
 .button--plus {
 position: relative; 
@@ -396,12 +443,15 @@ position: relative;
 .button--cross {height: 20px; width: 20px; background: svg-load('close.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;}
 .button--edit {height: 20px; width: 20px; background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center;}
 .button--edit:hover,.button--edit:focus{background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100%;)}
-.button--delete {height: 20px; width: 20px; background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; margin-left: 10px;}
+.button--delete {height: 20px; width: 20px; background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; margin-left: 20px;}
 .button--delete:focus,.button--delete:hover{background: svg-load('trash.svg', fill = $yellow, width = 100%, height = 100% ) no-repeat center;}
+.form-divider{width:100%; color:#dedee0;opacity:.4;border-width: thin;}
+.form__content{flex:1;width: 100%;padding-bottom: 45px;}
+.form__add{display: flex;align-items: center;width: 100%;justify-content: flex-end;}
 .name__skills {display: grid; grid-template-rows: 1fr;
 grid-template-columns: 1fr 1fr;
 @include phones {grid-template-columns: 1fr} }
-.button--submit {background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); color:#fff; padding: 20px; border-radius: 35px;  text-transform: uppercase; margin: 0 auto; cursor: pointer;
+.button--submit {background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); color:#fff; padding: 19px 42px; border-radius: 35px;  text-transform: uppercase; margin: 0 auto; cursor: pointer;
 &:hover,&:focus{background: linear-gradient( 0deg, rgb(63,53,203) 0%, rgb(32,80,220) 48%, rgb(0,106,237) 100%);}}
 .section-block {background: #fff;
 padding: 25px; 
@@ -409,54 +459,61 @@ margin: 10px;
 box-shadow:0 5px 10px rgba(0, 0, 0, 0.5);
 @include phones {margin: 10px 0px; padding: 10px}}
 .name__skills-card {
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-grid-template-areas: "name"
-"skill1"
-"skill2"
-"skill3"
-"new"
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
 }
-.name__skills-form {padding: 15px 0; border:none; display: flex; justify-content: space-between; align-items: center}
-.skill-form--name {grid-area: name; align-items: center; color: #4e586d; font-size: 18px; font-weight: 700}
-.name__skills-form--newskill   {grid-area: new; justify-content: flex-end}
+.name__skills-form { border:none; display: flex; justify-content: space-between; align-items: center;width: 100%;}
+.name__skills-form--skill{padding:15px 0;}
+.skill-form--name {align-items: center; color: #4e586d; font-size: 18px; font-weight: 700}
+.name__skills-form--newskill   { justify-content: flex-end}
+.skill-box{width: 20%; text-align: center;position: relative;align-items: center; margin: 0 11px;}
+.skill-box::after{content: "%";
+    position: absolute;
+    left: 76%;
+    top: -3%;
+    display: block;
+    color: #000;
+    font-size: 17px;}
 .skill-name {width: 60%; border-bottom: 1px solid transparent; margin-left: 10px; padding-bottom: 10px;}
-.skill-name--editing {width: 60%; border-bottom: 1px solid #000; margin-left: 10px; @include tablets{width:77%}}
+.skill-name--editing {width: 60%; border-bottom: 1px solid #000; margin-left: 10px; @include desktop{width:77%}}
 .form-radio {display: flex;}
 .form-radiobutton {margin: 10px}
-.new-skill{width: 40%; border-bottom: 1px solid #000; margin-left: 10px;}
-.skill-value {width: 20%; border-bottom: 1px solid #000; margin-left: 10px;}
+.new-skill{width: 46%; border-bottom: 1px solid #000; margin-left: 10px; padding: 0 12px 10px;;}
+.skill-value { border-bottom: 1px solid #000; margin-left: 10px; padding: 0 12px 10px;;}
 .work-skill {margin-left: 15px; font-size:18px; width: 50%;
 background: white
 }
 @include tablets {.work-skill {width:30%}}
-.skill-value--edited {border-bottom: 1px solid transparent; font-size: 18px; text-align: center}
+.skill-value--edited {border-bottom: 1px solid transparent; font-size: 18px; text-align: center;position: relative;}
 
 /* Блок Работы*/
 
 .edit-card {display: grid; grid-template-columns: 1fr 1fr;
-grid-template-rows: 0.5fr 3fr 3fr; grid-template-areas: "name name"
+grid-template-rows: 0.5fr 3fr 2fr; grid-template-areas: "name name"
 "download content"
 ". content";  grid-column-gap: 20px;
 @include tablets {grid-template-columns: 1fr; grid-template-areas: "name"
 "download"
 "content"}}
-.edit-card__name {border-bottom: 1px solid #dedee0; padding-bottom: 20px; margin-bottom: 20px; grid-area: name}
-.edit-card__download-area {align-self: center; background: #dee4ed; left: 0; border: #a1a1a1 1px dashed; padding: 100px 50px; text-align: center; grid-area: download; width: 70%; justify-self: center;}
-.inputfile {visibility: hidden; position: absolute;
-	z-index: -1;}
-.inputfile__text {margin-bottom: 20px; color: #b9c0cd}
+.edit-card__name {border-bottom: 1px solid #dedee0; padding-bottom: 20px; margin-bottom: 20px; grid-area: name;font-size: 18px;font-weight: bold;line-height: 1.89;}
+.edit-card__download-area {align-self: center; background: #dee4ed; left: 0; border: #a1a1a1 1px dashed; padding: 68px 155px; text-align: center; grid-area: download; width: 96%; justify-self: center;
+@include desktop{padding:68px 90px}
+}
+.inputfile {visibility: hidden; position: absolute; z-index: -1;}
+.inputfile__text {margin-bottom: 20px; color: rgba(40, 51, 64, 0.4);font-weight: 600;line-height: 2.12;}
 .edit-card__content {grid-area: content; display: flex; flex-direction: column; font-weight: 600}
-.edit-card__label {display: flex; flex-direction: column; margin-bottom: 20px;}
-.edit-card__input {padding: 10px; border-bottom: 1px solid #414c63; &:focus{border-bottom: 1px solid #414c63}}
+.edit-card__label {display: flex; flex-direction: column; margin-bottom: 20px;color:rgba(65, 76, 99, 0.5);font-weight: 700}
+.edit-card__input {padding: 14px 0; border-bottom: 1px solid $admin; &:focus{border-bottom: 1px solid $admin}}
 .edit-card__textarea {padding: 20px;    margin: 20px 5px;}
 .edit-card__taglist {display: flex}
 .edit-card__tag {margin-right: 10px; background: #f4f4f4; padding: 5px 15px; border-radius: 30px; display: flex; align-items: center}
-.edit-card__cross {height: 10px; width: 10px; background: svg-load('close.svg', fill = #414c63, width = 100%, height = 100% ) no-repeat center; margin-left: 10px;}
+.edit-card__description{font-size: 13px;color: rgba(40, 51, 64, 0.7);font-weight: 700}
+.edit-card__cross {height: 10px; width: 10px; background: svg-load('close.svg', fill = $admin, width = 100%, height = 100% ) no-repeat center; margin-left: 10px;}
 .edit-card__buttons {margin-top: 30px; display: flex; justify-content: flex-end;
 @include tablets {justify-content:center}}
-.button--edit-submit {margin: 0 0; margin-left: 20px;}
+.button--edit-submit {margin: 0 0; margin-left: 40px;padding:20px 40px;}
 .edit-card__reset {color: #383bcf}
 
 /* Добавить работу Блок */
@@ -470,8 +527,8 @@ grid-template-rows: 1fr;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    margin: 10px; 
-    padding: 30px; 
+    margin: 15px; 
+    padding:200px 30px; 
     background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); 
     color:#fff; 
     @include phones {
@@ -484,34 +541,37 @@ grid-template-rows: 1fr;
     justify-content: center;
     margin-bottom: 20px;
     }
-.edited-card { padding: 0 0}
+  .button__name{padding: 0 80px;line-height: 1.67;}
+.edited-card { margin: 14px;padding: 0}
 .edited-card__picture{max-width: 100%}
-.edited-card__description{padding: 25px 15px;}
+.edited-card__description{padding: 25px 14px 25px 30px;}
 .edited-card__buttons {width: 100%; display: flex; justify-content: space-between; color: #a0a5b1; margin-top: 20px;}
 .button--edit-edited{position:relative; 
+color:rgba(65, 76, 99, 0.5);
 &:after{content: ""; 
 position: absolute;
-margin-left: 5px;
+margin-left: 10px;
 bottom: 3px;
 height: 15px;
 width: 15px; 
 background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100% ) no-repeat center}}
-.button--delete-edited{position:relative; margin-right: 20px;
+.button--delete-edited{position:relative; margin-right: 20px;color:rgba(65, 76, 99, 0.5);
 &:after{content: ""; 
 position: absolute;
-margin-left: 5px;
-bottom: 3px;
+margin-left: 10px;
+bottom: 1px;
 height: 15px;
 width: 15px; 
 background: svg-load('close.svg', fill = #c92e2e, width = 100%, height = 100% ) no-repeat center}}
-.edited-card__text {color: #7a8191; margin-top: 20px;}
-.edited-card__name {font-weight: 700;}
-.edited-card__link {color: #4548d2; margin-top: 20px;}
+.edited-card__text {color: #7a8191; margin: 24px 0; font-size: 16px;font-weight: 600;line-height: 1.88;text-align: left;color: rgba(65, 76, 99, 0.7);padding-right: 30px}
+.edited-card__name {font-weight: 700;font-size: 18px;color: $admin;margin: 10px 0;}
+.edited-card__link {color: #383bcf; margin-top: 20px;font-weight:600;line-height: 1.88;}
 
 /* Блок Отзывы */
 
 .edited-card--feedback {padding: 15px;
 }
+.button--add-card--feedback{padding: 124px 30px;}
 .edited-card__description--feedback {padding: 0}
 .edited-card__speaker-info {display: flex; padding-bottom: 15px; border-bottom: 1px solid #b9bdc5; align-items: center; justify-content: center;}
 .edited-card__speaker-picture-box {border-radius: 50%; overflow: hidden; height: 50px; width: 50px; display: flex; justify-content: center; align-items: center;}
@@ -519,7 +579,7 @@ background: svg-load('close.svg', fill = #c92e2e, width = 100%, height = 100% ) 
 .edited-card__speaker-textinfo {margin-left: 20px;}
 .edited-card__speaker-name {font-weight: 600}
 .edit-card--feedback {
-grid-template-columns: 1fr 2fr 0.25fr;
+grid-template-columns: 1fr 2fr 0.4fr;
 @include tablets {grid-template-columns: 1fr 2fr; grid-template-areas: "name name"
 "download content"
 ". content"};
@@ -535,6 +595,8 @@ grid-template-columns: 1fr 2fr 0.25fr;
 .edit-card__label--feedback {width: 48%; @include tablets {width: 100%}}
 .edit-card__input--feedback {padding-left: 0}
 .edit-card__textarea--feedback {margin-left: 0; margin-right: 0;}
+.text-feedback{margin-bottom: 60px}
+.edited-card__speaker-occ{color: rgba(65, 76, 99, 0.5);}
 </style>
 
 
