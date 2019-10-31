@@ -31,290 +31,290 @@
             a(href="#").navigation__link Отзывы
     main.maincontent
       .container.container--maincontent
-       section.name
-        .name__desc
-          h1.name__desc-text Блок &laquo;Обо мне&raquo;
-          button(type='button').button.button--plus Добавить группу
-        .name__skills
-          .name__skills-card.section-block 
-            form.name__skills-form.skill-form--name(@submit.prevent = 'newGroup') 
-              input( placeholder="Название новой группы" v-model = "branchName").skill-name.skill-name--editing
-              .form-yesno-buttons
-                button(type="submit").button.button--green 
-                button(type="reset").button.button--cross 
-            hr.form-divider
-            .form__content
-              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-            .form__add
-              input( placeholder="Новый навык" v-model = "newSkillName" ).new-skill
-              .skill-box
-                input( type="number" min="0" max = "100" placeholder="100" v-model ="percent").skill-value.value-bold
-              button(type="submit").button.button--big 
-                span.button--text +
-              
-          .name__skills-card.section-block 
-              form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                input(type="text" placeholder="Workflow").skill-name.value-bold
+        section.name
+          .name__desc
+            h1.name__desc-text Блок &laquo;Обо мне&raquo;
+            button(type='button').button.button--plus Добавить группу
+          .name__skills
+            .name__skills-card.section-block.name__skills-card--new
+              form.name__skills-form.skill-form--name(@submit.prevent = 'newGroup') 
+                input( placeholder="Название новой группы" v-model = "branchName").skill-name.skill-name--editing
                 .form-yesno-buttons
-                  button(type="submit").button.button--edit
+                  button(type="submit").button.button--green 
+                  button(type="reset").button.button--cross 
               hr.form-divider
               .form__content
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                  input(type="text" placeholder="GIT").work-skill.value-bold
-                  .skill-box
-                    input(type="number" min="0" max="100" placeholder="30" ).skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill
-              
-                  input(type="text" placeholder="Terminal").work-skill.value-bold
-                  .skill-box
-                     input(type="number" min="0" max="100" placeholder="45").skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')   
-              
-                  input(type="text" placeholder="GULP").work-skill.value-bold
-                  .skill-box
-                    input(type="number" min="0" max="100" placeholder="90").skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-            
-                  input(type="text" placeholder="Webpack").work-skill.value-bold
-                  .skill-box
-                    input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
               .form__add
+                input( placeholder="Новый навык" v-model = "newSkillName" ).new-skill
+                .skill-box
+                  input( type="number" min="0" max = "100" placeholder="100" v-model ="percent").skill-value.value-bold
+                button(type="submit").button.button--big 
+                  span.button--text +
+                
+            .name__skills-card.section-block 
+                form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
+                  input(type="text" placeholder="Workflow").skill-name.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                hr.form-divider
+                .form__content
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                    input(type="text" placeholder="GIT").work-skill.value-bold
+                    .skill-box
+                      input(type="number" min="0" max="100" placeholder="30" ).skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill
+                
+                    input(type="text" placeholder="Terminal").work-skill.value-bold
+                    .skill-box
+                      input(type="number" min="0" max="100" placeholder="45").skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')   
+                
+                    input(type="text" placeholder="GULP").work-skill.value-bold
+                    .skill-box
+                      input(type="number" min="0" max="100" placeholder="90").skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+              
+                    input(type="text" placeholder="Webpack").work-skill.value-bold
+                    .skill-box
+                      input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                .form__add
+                  form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
                 form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                  input(required placeholder="Новый навык" ).new-skill
+                  form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
+                    input(required placeholder="Новый навык" ).new-skill
+                    .skill-box
+                      input(required type="number" placeholder="100" min="0" max="100").skill-value.value-bold
+                    button(type="submit").button.button--big
+                      span.button--text +
+            .name__skills-card.section-block 
+                form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
+                  input(type="text" placeholder="Frontend").skill-name.value-bold
+                  .form-yesno-buttons
+                    button(type="submit").button.button--edit
+                hr.form-divider
+                .form__content
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                    input(type="text" placeholder="HTML5").work-skill.value-bold
+                    .skill-box
+                        input(type="number" min="0" max="100" placeholder="100" ).skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill
+                
+                    input(type="text" placeholder="CSS3").work-skill.value-bold
+                    .skill-box
+                        input(type="number" min="0" max="100" placeholder="90" ).skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                
+                    input(type="text" placeholder="JavaScript").work-skill.value-bold
+                    .skill-box
+                        input(type="number" min="0" max="100" placeholder="80").skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
+                
+                    input(type="text" placeholder="jquery и Vue.js").work-skill.value-bold
+                    .skill-box
+                      input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
+                    .form-yesno-buttons
+                      button(type="submit").button.button--edit
+                      button(type="button").button.button--delete
+            
+                  
+
+                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill')   
+              
+                  input(required placeholder="Новый навык").new-skill
                   .skill-box
-                    input(required type="number" placeholder="100" min="0" max="100").skill-value.value-bold
+                      input(required type="number" min="0" max="100" placeholder="100").skill-value.value-bold
                   button(type="submit").button.button--big
                     span.button--text +
-          .name__skills-card.section-block 
-              form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                input(type="text" placeholder="Frontend").skill-name.value-bold
-                .form-yesno-buttons
-                  button(type="submit").button.button--edit
-              hr.form-divider
-              .form__content
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                  input(type="text" placeholder="HTML5").work-skill.value-bold
-                  .skill-box
-                      input(type="number" min="0" max="100" placeholder="100" ).skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill
-              
-                  input(type="text" placeholder="CSS3").work-skill.value-bold
-                  .skill-box
-                      input(type="number" min="0" max="100" placeholder="90" ).skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-              
-                  input(type="text" placeholder="JavaScript").work-skill.value-bold
-                  .skill-box
-                      input(type="number" min="0" max="100" placeholder="80").skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-                form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-              
-                  input(type="text" placeholder="jquery и Vue.js").work-skill.value-bold
-                  .skill-box
-                    input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                    button(type="button").button.button--delete
-          
+        section.section--works
+            h1.name__desc-text Блок &laquo;Работы&raquo;
+            form.section-block.edit-card.edit-card--works(@submit.prevent = 'newWork') 
+              h2.edit-card__name Редактирование работы
+              .edit-card__download-area
+                input.inputfile(type="file" required name="file" id="file") 
+                label.inputfile__label(for="file")
+                  .inputfile__text Перетащите или нажмите для загрузки изображения
+                  button.button.button--submit загрузить
+              .edit-card__content
+                label.edit-card__label Название
+                  input( required placeholder = "Сайт для туристической компании").edit-card__input
+                label.edit-card__label Ссылка
+                  input(required placeholder = "Anextour.com").edit-card__input
+                label.edit-card__label Описание
+                  textarea( rows="5" required placeholder="Сайт для реализации вашей мечты, путешествия в дальние страны с невероятным уровнем сервиса").edit-card__textarea.edit-card__input
+                label.edit-card__label Добавление тега
+                  input(required placeholder = "HTML,").edit-card__input
+                ul.edit-card__taglist
+                  li.edit-card__tag
+                    p.edit-card__description HTML
+                    button(type="button").button.edit-card__cross 
+                  li.edit-card__tag
+                    p.edit-card__description CSS
+                    button(type="button").button.edit-card__cross 
+                  li.edit-card__tag
+                    p.edit-card__description Javascript
+                    button(type="button").button.edit-card__cross 
+                .edit-card__buttons
+                  button(type = "reset").edit-card__reset Отмена
+                  button(type = "submit").button.button--submit.button--edit-submit сохранить
+            .edited-blocks
+              button.button.button--add-card
+                .button__pic +
+                p.button__name Добавить работу
+              .section-block.edited-card
+                .edited-card__picture-box
+                  img(src='../images/content/slider/1.jpg').edited-card__picture
+                .edited-card__description
+                  .edited-card__name Сайт туристической компании
+                  p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                  a(href="#").edited-card__link Anextour.com
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+              .section-block.edited-card
+                .edited-card__picture-box
+                  img(src='../images/content/slider/1.jpg').edited-card__picture
+                .edited-card__description
+                  .edited-card__name Сайт туристической компании
+                  p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                  a(href="#").edited-card__link Anextour.com
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+              .section-block.edited-card
+                .edited-card__picture-box
+                  img(src='../images/content/slider/2.jpg').edited-card__picture
+                .edited-card__description
+                  .edited-card__name Сайт туристической компании
+                  p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
+                  a(href="#").edited-card__link Anextour.com
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+        section.section--feedback
+
+            h1.name__desc-text Блок &laquo;Отзывы&raquo;
+            form.section-block.edit-card.edit-card--feedback(@submit.prevent = "feedbackEdit")
+              h2.edit-card__name Новый отзыв
+              .edit-card__download-area.edit-card__download-area--feedback
+                input.inputfile(type="file" required name="file" id="userpic") 
+                label.inputfile__label(for="userpic")
+                  .userpic-bg
+                    .userpic-svg
                 
-
-              form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill')   
-            
-                input(required placeholder="Новый навык").new-skill
-                .skill-box
-                    input(required type="number" min="0" max="100" placeholder="100").skill-value.value-bold
-                button(type="submit").button.button--big
-                  span.button--text +
-       section.section--works
-          h1.name__desc-text Блок &laquo;Работы&raquo;
-          form.section-block.edit-card.edit-card--works(@submit.prevent = 'newWork') 
-            h2.edit-card__name Редактирование работы
-            .edit-card__download-area
-              input.inputfile(type="file" required name="file" id="file") 
-              label.inputfile__label(for="file")
-                .inputfile__text Перетащите или нажмите для загрузки изображения
-                button.button.button--submit загрузить
-            .edit-card__content
-              label.edit-card__label Название
-                input( required placeholder = "Сайт для туристической компании").edit-card__input
-              label.edit-card__label Ссылка
-                input(required placeholder = "Anextour.com").edit-card__input
-              label.edit-card__label Описание
-                textarea( rows="5" required placeholder="Сайт для реализации вашей мечты, путешествия в дальние страны с невероятным уровнем сервиса").edit-card__textarea.edit-card__input
-              label.edit-card__label Добавление тега
-                input(required placeholder = "HTML,").edit-card__input
-              ul.edit-card__taglist
-                li.edit-card__tag
-                  p.edit-card__description HTML
-                  button(type="button").button.edit-card__cross 
-                li.edit-card__tag
-                  p.edit-card__description CSS
-                  button(type="button").button.edit-card__cross 
-                li.edit-card__tag
-                  p.edit-card__description Javascript
-                  button(type="button").button.edit-card__cross 
-              .edit-card__buttons
-                button(type = "reset").edit-card__reset Отмена
-                button(type = "submit").button.button--submit.button--edit-submit сохранить
-          .edited-blocks
-            button.button.button--add-card
-              .button__pic +
-              p.button__name Добавить работу
-            .section-block.edited-card
-              .edited-card__picture-box
-                img(src='../images/content/slider/1.jpg').edited-card__picture
-              .edited-card__description
-                .edited-card__name Сайт туристической компании
-                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
-                a(href="#").edited-card__link Anextour.com
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-            .section-block.edited-card
-              .edited-card__picture-box
-                img(src='../images/content/slider/1.jpg').edited-card__picture
-              .edited-card__description
-                .edited-card__name Сайт туристической компании
-                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
-                a(href="#").edited-card__link Anextour.com
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-            .section-block.edited-card
-              .edited-card__picture-box
-                img(src='../images/content/slider/2.jpg').edited-card__picture
-              .edited-card__description
-                .edited-card__name Сайт туристической компании
-                p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
-                a(href="#").edited-card__link Anextour.com
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-       section.section--feedback
-
-          h1.name__desc-text Блок &laquo;Отзывы&raquo;
-          form.section-block.edit-card.edit-card--feedback(@submit.prevent = "feedbackEdit")
-            h2.edit-card__name Новый отзыв
-            .edit-card__download-area.edit-card__download-area--feedback
-              input.inputfile(type="file" required name="file" id="userpic") 
-              label.inputfile__label(for="userpic")
-                .userpic-bg
-                  .userpic-svg
+                  .button.button--link Добавить фото
+              .edit-card__content.edit-card__content--feedback
+                .edit-card__row
+                  label.edit-card__label.edit-card__label--feedback Имя автора
+                    input( required placeholder = "Грегори Хаус").edit-card__input.edit-card__input--feedback
+                  label.edit-card__label.edit-card__label--feedback Статус
+                    input(required placeholder = "Доктор Медицины").edit-card__input.edit-card__input--feedback
+                label.edit-card__label Отзыв
+                  textarea( rows="5" required placeholder="Игнорируете меня? Или молча наслаждаетесь моим обаянием?").edit-card__textarea.edit-card__textarea--feedback
               
-                .button.button--link Добавить фото
-            .edit-card__content
-              .edit-card__row
-                label.edit-card__label.edit-card__label--feedback Имя автора
-                  input( required placeholder = "Грегори Хаус").edit-card__input.edit-card__input--feedback
-                label.edit-card__label.edit-card__label--feedback Статус
-                  input(required placeholder = "Доктор Медицины").edit-card__input.edit-card__input--feedback
-              label.edit-card__label Отзыв
-                textarea( rows="5" required placeholder="Игнорируете меня? Или молча наслаждаетесь моим обаянием?").edit-card__textarea.edit-card__textarea--feedback
-            
-              .edit-card__buttons
-                button(type = "reset").edit-card__reset Отмена
-                button(type = "submit").button.button--submit.button--edit-submit сохранить
+                .edit-card__buttons
+                  button(type = "reset").edit-card__reset Отмена
+                  button(type = "submit").button.button--submit.button--edit-submit сохранить
 
-          .edited-blocks
-            button.button.button--add-card.button--add-card--feedback
-              .button__pic +
-              p.button__name Добавить отзыв
-            .section-block.edited-card.edited-card--feedback
-              .edited-card__speaker-info
-                .edited-card__speaker-picture-box
-                  img(src='../images/content/loft/vova.png').edited-card__speaker-picture
-                .edited-card__speaker-textinfo
-                  p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-occ Преподаватель
+            .edited-blocks
+              button.button.button--add-card.button--add-card--feedback
+                .button__pic +
+                p.button__name Добавить отзыв
+              .section-block.edited-card.edited-card--feedback
+                .edited-card__speaker-info
+                  .edited-card__speaker-picture-box
+                    img(src='../images/content/loft/vova.png').edited-card__speaker-picture
+                  .edited-card__speaker-textinfo
+                    p.edited-card__speaker-name Владимир Сабанцев
+                    p.edited-card__speaker-occ Преподаватель
+                
               
-             
-              .edited-card__description.edited-card__description--feedback
+                .edited-card__description.edited-card__description--feedback
+                
+                  p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+
+
               
-                p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-
-
-            
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-            .section-block.edited-card.edited-card--feedback
-              .edited-card__speaker-info
-                .edited-card__speaker-picture-box
-                  img(src='../images/content/loft/vova.png').edited-card__speaker-picture
-                .edited-card__speaker-textinfo
-                  p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-occ Преподаватель
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+              .section-block.edited-card.edited-card--feedback
+                .edited-card__speaker-info
+                  .edited-card__speaker-picture-box
+                    img(src='../images/content/loft/vova.png').edited-card__speaker-picture
+                  .edited-card__speaker-textinfo
+                    p.edited-card__speaker-name Владимир Сабанцев
+                    p.edited-card__speaker-occ Преподаватель
+                
               
-             
-              .edited-card__description.edited-card__description--feedback
+                .edited-card__description.edited-card__description--feedback
+                
+                  .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+
+
               
-                .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-
-
-            
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-            .section-block.edited-card.edited-card--feedback
-              .edited-card__speaker-info
-                .edited-card__speaker-picture-box
-                  img(src='../images/content/loft/vova.png').edited-card__speaker-picture
-                .edited-card__speaker-textinfo
-                  p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-occ Преподаватель
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+              .section-block.edited-card.edited-card--feedback
+                .edited-card__speaker-info
+                  .edited-card__speaker-picture-box
+                    img(src='../images/content/loft/vova.png').edited-card__speaker-picture
+                  .edited-card__speaker-textinfo
+                    p.edited-card__speaker-name Владимир Сабанцев
+                    p.edited-card__speaker-occ Преподаватель
+                
               
-             
-              .edited-card__description.edited-card__description--feedback
+                .edited-card__description.edited-card__description--feedback
+                
+                  p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+
+
               
-                p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-
-
-            
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
-            .section-block.edited-card.edited-card--feedback
-              .edited-card__speaker-info
-                .edited-card__speaker-picture-box
-                  img(src='../images/content/loft/vova.png').edited-card__speaker-picture
-                .edited-card__speaker-textinfo
-                  p.edited-card__speaker-name Владимир Сабанцев
-                  p.edited-card__speaker-occ Преподаватель
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
+              .section-block.edited-card.edited-card--feedback
+                .edited-card__speaker-info
+                  .edited-card__speaker-picture-box
+                    img(src='../images/content/loft/vova.png').edited-card__speaker-picture
+                  .edited-card__speaker-textinfo
+                    p.edited-card__speaker-name Владимир Сабанцев
+                    p.edited-card__speaker-occ Преподаватель
+                
               
-             
-              .edited-card__description.edited-card__description--feedback
+                .edited-card__description.edited-card__description--feedback
+                
+                  .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+
+
               
-                .edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-
-
-            
-                .edited-card__buttons
-                  button(type="button").button.button--edit-edited Править
-                  button(type="button").button.button--delete-edited Удалить
+                  .edited-card__buttons
+                    button(type="button").button.button--edit-edited Править
+                    button(type="button").button.button--delete-edited Удалить
 
 
        
@@ -335,9 +335,14 @@
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/*.pcss";
+  /*Wrapper Настройки*/
+
+.wrapper{font-family: 'Open Sans', Helvetica, sans-serif;font-size: 16px;line-height: 1.42;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: $text-color;background: url('../images/content/cloud.jpg') no-repeat center;background-size: cover;}
+.wrapper__filter {background:rgba(255, 255, 255, 0.9)}
+.container {@include phones{width:100%}}
 
 /* Настройки */
-.container--maincontent{width: 94%;}
+.container--maincontent{width: 94%;@include tablets{width:96%;} @include phones{width:94%;}}
 input{outline: none;border: none;
 &::-webkit-outer-spin-button,
 &::-webkit-inner-spin-button{
@@ -379,16 +384,11 @@ border-bottom: 1px solid #414d63;
     &:hover {background: linear-gradient( 90deg, rgb(147,0,232) 60%, rgb(111,0,235) 100%); transition: 0.3s;}
   }
 
-  /*Wrapper Настройки*/
-
-.wrapper{font-family: 'Open Sans', Helvetica, sans-serif;font-size: 16px;line-height: 1.42;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: $text-color;background: url('../images/content/cloud.jpg') no-repeat center;background-size: cover;}
-.wrapper__filter {background:rgba(255, 255, 255, 0.9)}
-.container {@include phones{width:100%}}
 
 /* Header */
 
 .header {background: #44436c; color: #fff; padding: 10px 0px }
-.container--header {display: grid; align-items: center;grid-template-columns: 1.2fr 1.5fr 2.5fr 1fr;grid-template-rows: 1fr;grid-template-areas: 'userpic admin . exit'}
+.container--header {display: grid; align-items: center;grid-template-columns: 1.2fr 1.5fr 2.5fr 1fr;grid-template-rows: 1fr;grid-template-areas: 'userpic admin . exit';@include phones{width:94%}}
 .userpic {grid-area: userpic; font-weight: bold; display: flex; align-items: center}
 .userpic__photo{height: 44px; width: 44px; border-radius: 50%; overflow: hidden; margin-right: 20px; flex-shrink: 0}
 .userjpg{max-width: 100%;}
@@ -397,7 +397,7 @@ border-bottom: 1px solid #414d63;
 .exit {grid-area: exit; color: rgba(255, 255, 255, 0.5); text-align: right; font-size: 16px; text-decoration: underline;&:hover{color: rgba(255, 255, 255, 0.8)}}
 
 /* Навигация */
-
+.container--navigation{@include phones{width:94%; padding:20px 0;}}
 .navigation {background: #fff;}
 .navigation__list {display: flex; list-style: none;  color:#60697c; padding: 0}
 .navigation__item {border-bottom: 2px solid transparent; padding: 15px;margin-right: 15px;
@@ -411,14 +411,15 @@ border-bottom: 1px solid #414d63;
 .name__desc {display: flex; align-items: baseline;}
 @include phones {
   .name__desc{flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     align-items: flex-start;}}
 .name__desc-text {font-weight: 700; font-size: 21px; padding: 30px 0 0 10px; margin: 10px 60px 50px 0;
-@include phones {padding: 15px 0; margin-right: 0;}}
+@include phones {padding: 15px 0 5px; margin:10px 0 20px 0;}}
 .button--plus {
 position: relative; 
 margin-left: 25px;
 margin-bottom: -11px;
+color: #383bcf;
 &:before{position: absolute;
 content: " ";
 left: -25px;
@@ -439,7 +440,7 @@ position: relative;
 }
 .button--text{position: absolute;top: 50%;left:50%;transform:translate(-50%,-50%);color: white;font-size: 25px;font-weight: 600;}
 .button--green {
-  height: 20px; width: 20px; margin-right: 10px; background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;}
+  height: 20px; width: 20px; margin-right: 20px; background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;}
 .button--cross {height: 20px; width: 20px; background: svg-load('close.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;}
 .button--edit {height: 20px; width: 20px; background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center;}
 .button--edit:hover,.button--edit:focus{background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100%;)}
@@ -457,13 +458,14 @@ grid-template-columns: 1fr 1fr;
 padding: 25px; 
 margin: 10px;
 box-shadow:0 5px 10px rgba(0, 0, 0, 0.5);
-@include phones {margin: 10px 0px; padding: 10px}}
+@include phones {margin: 10px -18px; padding: 10px}}
 .name__skills-card {
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: flex-start;
 }
+.name__skills-card--new{@include tablets{display:none;}}
 .name__skills-form { border:none; display: flex; justify-content: space-between; align-items: center;width: 100%;}
 .name__skills-form--skill{padding:15px 0;}
 .skill-form--name {align-items: center; color: #4e586d; font-size: 18px; font-weight: 700}
@@ -475,7 +477,7 @@ justify-content: flex-start;
     top: -3%;
     display: block;
     color: #000;
-    font-size: 17px;}
+    font-size: 17px; @include desktop{margin-left: 10px;}@include tablets{margin-left: 20px;}}
 .skill-name {width: 60%; border-bottom: 1px solid transparent; margin-left: 10px; padding-bottom: 10px;}
 .skill-name--editing {width: 60%; border-bottom: 1px solid #000; margin-left: 10px; @include desktop{width:77%}}
 .form-radio {display: flex;}
@@ -494,20 +496,21 @@ background: white
 grid-template-rows: 0.5fr 3fr 2fr; grid-template-areas: "name name"
 "download content"
 ". content";  grid-column-gap: 20px;
-@include tablets {grid-template-columns: 1fr; grid-template-areas: "name"
+@include tablets {grid-template-rows: 0.3fr 1fr 2fr;grid-template-columns: 1fr; grid-template-areas: "name"
 "download"
 "content"}}
-.edit-card__name {border-bottom: 1px solid #dedee0; padding-bottom: 20px; margin-bottom: 20px; grid-area: name;font-size: 18px;font-weight: bold;line-height: 1.89;}
+.edit-card__name {border-bottom: 1px solid #dedee0; padding-bottom: 20px; margin-bottom: 20px; grid-area: name;font-size: 18px;font-weight: bold;line-height: 1.89;
+@include phones{align-self: center;padding:20px 10px;}}
 .edit-card__download-area {align-self: center; background: #dee4ed; left: 0; border: #a1a1a1 1px dashed; padding: 68px 155px; text-align: center; grid-area: download; width: 96%; justify-self: center;
-@include desktop{padding:68px 90px}
+@include desktop{padding:68px 90px}@include tablets{width:80%;}@include phones{width:90%;height:65%; padding: 20px 20px;}
 }
 .inputfile {visibility: hidden; position: absolute; z-index: -1;}
-.inputfile__text {margin-bottom: 20px; color: rgba(40, 51, 64, 0.4);font-weight: 600;line-height: 2.12;}
-.edit-card__content {grid-area: content; display: flex; flex-direction: column; font-weight: 600}
+.inputfile__text {margin-bottom: 20px; color: rgba(40, 51, 64, 0.4);font-weight: 600;line-height: 2.12;@include phones{margin:0;}}
+.edit-card__content {grid-area: content; display: flex; flex-direction: column; font-weight: 600; @include tablets{padding: 0 70px;}@include phones{padding:0 25px;}}
 .edit-card__label {display: flex; flex-direction: column; margin-bottom: 20px;color:rgba(65, 76, 99, 0.5);font-weight: 700}
 .edit-card__input {padding: 14px 0; border-bottom: 1px solid $admin; &:focus{border-bottom: 1px solid $admin}}
 .edit-card__textarea {padding: 20px;    margin: 20px 5px;}
-.edit-card__taglist {display: flex}
+.edit-card__taglist {display: flex;}
 .edit-card__tag {margin-right: 10px; background: #f4f4f4; padding: 5px 15px; border-radius: 30px; display: flex; align-items: center}
 .edit-card__description{font-size: 13px;color: rgba(40, 51, 64, 0.7);font-weight: 700}
 .edit-card__cross {height: 10px; width: 10px; background: svg-load('close.svg', fill = $admin, width = 100%, height = 100% ) no-repeat center; margin-left: 10px;}
@@ -521,7 +524,7 @@ grid-template-rows: 0.5fr 3fr 2fr; grid-template-areas: "name name"
 .edited-blocks {display: grid; grid-template-columns: 1fr 1fr 1fr;
 grid-template-rows: 1fr;
 @include tablets {grid-template-columns:1fr 1fr}
-@include phones {grid-template-columns: 1fr} }
+@include phones {grid-template-columns: 1fr;margin:0 -30px;} }
 
 .button--add-card {display: flex;
     flex-direction: column;
@@ -532,7 +535,9 @@ grid-template-rows: 1fr;
     background: linear-gradient( 0deg, rgb(0,106,237) 0%, rgb(32,80,220) 48%, rgb(63,53,203) 100%); 
     color:#fff; 
     @include phones {
-      margin: 0
+      margin: 0;
+      padding:40px 0px;
+      flex-direction:row;
       } 
     }
 
@@ -540,8 +545,9 @@ grid-template-rows: 1fr;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    @include phones{margin:0;}
     }
-  .button__name{padding: 0 80px;line-height: 1.67;}
+  .button__name{padding: 0 80px;line-height: 1.67;@include phones{padding:0 40px;}}
 .edited-card { margin: 14px;padding: 0}
 .edited-card__picture{max-width: 100%}
 .edited-card__description{padding: 25px 14px 25px 30px;}
@@ -569,9 +575,10 @@ background: svg-load('close.svg', fill = #c92e2e, width = 100%, height = 100% ) 
 
 /* Блок Отзывы */
 
-.edited-card--feedback {padding: 15px;
+.edited-card--feedback {padding: 15px;@include tablets{padding: 35px;}
 }
-.button--add-card--feedback{padding: 124px 30px;}
+.button--add-card--feedback{padding: 124px 30px;@include phones{padding:2,5rem 0rem;}}
+
 .edited-card__description--feedback {padding: 0}
 .edited-card__speaker-info {display: flex; padding-bottom: 15px; border-bottom: 1px solid #b9bdc5; align-items: center; justify-content: center;}
 .edited-card__speaker-picture-box {border-radius: 50%; overflow: hidden; height: 50px; width: 50px; display: flex; justify-content: center; align-items: center;}
@@ -580,21 +587,22 @@ background: svg-load('close.svg', fill = #c92e2e, width = 100%, height = 100% ) 
 .edited-card__speaker-name {font-weight: 600}
 .edit-card--feedback {
 grid-template-columns: 1fr 2fr 0.4fr;
-@include tablets {grid-template-columns: 1fr 2fr; grid-template-areas: "name name"
+@include tablets {grid-template-rows: .1fr 1.1fr 1.2fr;grid-template-columns: 1fr 2fr; grid-template-areas: "name name"
 "download content"
 ". content"};
-@include phones {grid-template-columns: 1fr; grid-template-areas: "name"
+@include phones {grid-template-rows:0.1fr 0.7fr 1.2fr;grid-template-columns: 1fr; grid-template-areas: "name"
 "download"
 "content"}}
 .edit-card__download-area--feedback {border: none; background: inherit; padding: 10px; display: flex; justify-content: center; align-items: center;}
+.edit-card__content--feedback{@include tablets{padding:0; padding-top:20px;}}
 .userpic-bg {cursor: pointer; background: #dee4ed; height: 200px; width: 200px; border-radius: 50%; margin: 0 auto; display: flex; justify-content: center; align-items: center}
 .userpic-svg {height: 100px; width: 100px; background: svg-load('user.svg', fill = #fff, width = 100%, height = 100% ) no-repeat center;}
 .button--link {color: #383bcf; margin-top: 30px; font-weight: 600; cursor: pointer; width: 100%; text-align: center}
 .edit-card__row {display: flex; width: 100%; justify-content: space-between;
 @include tablets {flex-direction: column}}
-.edit-card__label--feedback {width: 48%; @include tablets {width: 100%}}
+.edit-card__label--feedback {width: 48%; @include tablets {width: 74%; margin-bottom:35px;}@include phones{width:100%;}}
 .edit-card__input--feedback {padding-left: 0}
-.edit-card__textarea--feedback {margin-left: 0; margin-right: 0;}
+.edit-card__textarea--feedback {margin-left: 0; margin-right: 0;@include tablets{height:155px;resize:none;}}
 .text-feedback{margin-bottom: 60px}
 .edited-card__speaker-occ{color: rgba(65, 76, 99, 0.5);}
 </style>
