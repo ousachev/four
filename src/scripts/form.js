@@ -68,7 +68,7 @@ new Vue({
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify(userData)
                 }).then( (response)=>{
-                    this.resultMessage = "Сообщение отправлено";
+                    this.resultMessage = "Письмо отправлено";
                     this.overlayHidden = false;
                     setTimeout(this.hideOverlay,3000);
                 });

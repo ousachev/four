@@ -215,11 +215,11 @@ text-transform: uppercase;
     height: 100%;
     left: 0;
     top: 0;
-    background: #424f5f;
-    opacity: 0.9;
+    background: rgba(45, 60, 78, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:10000;
 }
 
 .overlay.disabled{
@@ -231,10 +231,26 @@ padding: 67px 100px;
 background: white;
 top: 50%;
 left: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+opacity: 1;
+}
+
+.overlay__message{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.67;
+    color: $admin;
+    margin-bottom: 20px;
 }
 
 .overlay__close{
     border-radius: 40px 5px;
-    background: linear-gradient(90deg,rgb(147, 0, 232) 0%,rgb(111, 0, 235) 48%, rgb(74, 0, 237) 100%
-  )
+    background: linear-gradient(90deg,rgb(147, 0, 232) 0%,rgb(111, 0, 235) 48%, rgb(74, 0, 237) 100%);
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    padding: 25px 138px;
+    outline: none;
 }

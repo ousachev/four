@@ -8,7 +8,7 @@ section(id="six").form
                     .contact__wrapper-row
                         .contact__icon-wrapper
                             +icon('user', 'contact__icon')
-                        input.contact__input.contact__input--name(type="text" name="name" placeholder="Ковальчук Дмитрий" @input="validateName" onFocus="this.placeholder='';" required)
+                        input.contact__input.contact__input--name(type="text" name="name" placeholder="Ковальчук Дмитрий" @input="validateName" onFocus="this.placeholder='';")
                         .contact__tooltip {{nameError}}
                 .contact__wrapper.contact__wrapper--email(:class="{error: !emailValid}")
                     label.contact__label Введите ваш email
@@ -24,8 +24,8 @@ section(id="six").form
                             +icon('message', 'contact__icon')
                         textarea.contact__input.contact__input--text(name="text" @input="validateMessage" onFocus="this.placeholder=''" placeholder="Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса")
                         .contact__tooltip {{messageError}}
-                button(@click.prebent="submitForm").contact__submit-button Отправить
+                button(@click.prevent="submitForm").contact__submit-button Отправить
     .overlay(:class="{disabled:overlayHidden}" @click="hideOverlay")
         .overlay__content
             .overlay__message {{resultMessage}}
-            button.overlay__close(@click="hideOverlay") Закрыть
+            button.overlay__close(@click="hideOverlay" ) Закрыть
