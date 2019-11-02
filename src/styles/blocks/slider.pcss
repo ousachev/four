@@ -173,6 +173,7 @@
     @include tablets{
         right: -57px;
         bottom: 10%;
+        max-height: 13vw;
     }
 
     @include phones{
@@ -195,10 +196,18 @@
 
 .slider-buttons__item{
     width: 50px;
-    height: 50px;
+    height: 4.4vw;
     background: #353e4e;
     position: relative;
     
+    @include desktopHd{
+        height: 5vw;
+    }
+
+    @include desktop{
+        height: 4vw;
+    }
+
     @include tablets{
         width: 58px;
         height: 58px;

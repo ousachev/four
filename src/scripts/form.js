@@ -38,7 +38,7 @@ new Vue({
                 this.emailError = 'Неверный email';
             }else {
                 this.emailValid = true;
-                this.email.Error = '';
+                this.emailError = '';
             }
             return this.emailValid;
         },

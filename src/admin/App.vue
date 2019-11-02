@@ -281,7 +281,7 @@
 
 /* Настройки */
 .container--maincontent {
-  width: 94%;
+  width: 95%;
   @include tablets {
     width: 96%;
   }
@@ -699,7 +699,7 @@ button {
   background: #fff;
   padding: 25px;
   margin: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   @include phones {
     margin: 10px -18px;
     padding: 10px;

@@ -170,6 +170,44 @@ text-transform: uppercase;
     top: 40px;
 }
 
+.contact__wrapper.error{
+
+    .contact__icon{
+        fill:#cd1515;
+        opacity: 1;
+    }
+
+    .contact__tooltip{
+        display: block;
+        opacity: 1;
+        background: #cd1515;
+    }
+
+    .contact__input{
+        border-color: #cd1515;
+    }
+}
+
+.contact__tooltip{
+    position: absolute;
+    font-size: 13px;
+    top: 100%;
+    left: 46px;
+    padding: 5px 20px;
+    display: none;
+    opacity: 0;
+
+    &::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -24%;
+        border-color: transparent transparent #cd1515;
+        border-style: solid ;
+        border-width: 0 7.5px 7px;
+    }
+}
+
 .overlay{
     display: block;
     position: fixed;
