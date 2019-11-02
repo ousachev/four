@@ -699,7 +699,7 @@ button {
   background: #fff;
   padding: 25px;
   margin: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   @include phones {
     margin: 10px -18px;
     padding: 10px;
