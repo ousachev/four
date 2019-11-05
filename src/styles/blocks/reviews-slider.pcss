@@ -27,6 +27,12 @@
 .reviews-slider__btn--left{
     transform: rotate(180deg);
     margin-right: 28px;
+
+  
+
+    @include tablets{
+        margin-right: 15px;
+    }
 }
 
 .reviews-slider__btn--disabled{
@@ -102,13 +108,6 @@ padding-right: 50px;
     width: 75px;
     height: 75px;
     margin-right: 31px;
-
-    @include desktopHd{
-        overflow: visible;
-        border-radius: 0;
-        width: 103px;
-        height: 154px;
-    }
 
     @include tablets{
         width: 86px;

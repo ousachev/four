@@ -17,7 +17,7 @@ section(id="first").hero
                   - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
                   ul.nav__list
                     each item, index in menu
-                      li.nav__item(class=`${index==2 ? 'active' : ''}`)
+                      li.nav__item
                         a(href="").nav__link #{item}
             .hero__links
                 - var icons = ['insta','vk','github']
@@ -36,6 +36,6 @@ section(id="first").hero
               h3.hero-info__desc Личный сайт<br> веб разработчика
               h1.hero-info__name Олег<br> Усачев
           .hero__buttons
-            a(href="").scroll-down-btn__link
+            a(href="#second").scroll-down-btn__link
               .scroll-down-btn Скролл
               +icon("scroll","scroll-down-btn__pic") 
