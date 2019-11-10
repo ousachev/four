@@ -1,258 +1,195 @@
 <template lang="pug">
-.wrapper
-  .popup
-    .popup__filter
-      .container.container--popup
-        form.form-login(@submit.prevent="login")
-          h2.form-login__headline Авторизация
-          label.form-login__label.form-login__label--login Логин
-            input(required).form-login__input
-          label.form-login__label.form-login__label--password Пароль
-            input(required).form-login__input
-          button(type= "submit").button.button-login-submit Отправить
-          button(type = "button").button.button-login-exit 
-  .wrapper__filter
-    header.header
-      .container.container--header
-        .userpic
-          .userpic__photo
-            img(src="../images/content/avatar.png" class='userjpg' alt="мое лицо")
-          .userpic__name Усачев Олег
-        .admin Панель администрирования
-        a(href="#").exit Выйти
-    nav.navigation
-      .container.container--navigation
-        ul.navigation__list
-          li.navigation__item.navigation__item--active
-            a(href="#").navigation__link Обо мне
-          li.navigation__item
-            a(href="#").navigation__link  Работы
-          li.navigation__item
-            a(href="#").navigation__link Отзывы
-    main.maincontent
-      .container.container--maincontent
-        section.name
-          .name__desc
-            h1.name__desc-text Блок &laquo;Обо мне&raquo;
-            button(type='button').button.button--plus Добавить группу
-          .name__skills
-            .name__skills-card.section-block.name__skills-card--new
-              form.name__skills-form.skill-form--name(@submit.prevent = 'newGroup') 
-                input( placeholder="Название новой группы" v-model = "branchName").skill-name.skill-name--editing
-                .form-yesno-buttons
-                  button(type="submit").button.button--green 
-                  button(type="reset").button.button--cross 
-              hr.form-divider
-              .form__content
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-              .form__add
-                input( placeholder="Новый навык" v-model = "newSkillName" ).new-skill
-                .skill-box
-                  input( type="number" min="0" max = "100" placeholder="100" v-model ="percent").skill-value.value-bold
-                button(type="submit").button.button--big 
-                  span.button--text +
-                
-            .name__skills-card.section-block 
-                form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                  input(type="text" placeholder="Workflow").skill-name.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                hr.form-divider
-                .form__content
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                    input(type="text" placeholder="GIT").work-skill.value-bold
-                    .skill-box
-                      input(type="number" min="0" max="100" placeholder="30" ).skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill
-                
-                    input(type="text" placeholder="Terminal").work-skill.value-bold
-                    .skill-box
-                      input(type="number" min="0" max="100" placeholder="45").skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')   
-                
-                    input(type="text" placeholder="GULP").work-skill.value-bold
-                    .skill-box
-                      input(type="number" min="0" max="100" placeholder="90").skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-              
-                    input(type="text" placeholder="Webpack").work-skill.value-bold
-                    .skill-box
-                      input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                .form__add
-                  form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                  form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill') 
-                    input(required placeholder="Новый навык" ).new-skill
-                    .skill-box
-                      input(required type="number" placeholder="100" min="0" max="100").skill-value.value-bold
-                    button(type="submit").button.button--big
-                      span.button--text +
-            .name__skills-card.section-block 
-                form.name__skills-form.skill-form--name(@submit.prevent = 'editSkillBranchName') 
-                  input(type="text" placeholder="Frontend").skill-name.value-bold
-                  .form-yesno-buttons
-                    button(type="submit").button.button--edit
-                hr.form-divider
-                .form__content
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                    input(type="text" placeholder="HTML5").work-skill.value-bold
-                    .skill-box
-                        input(type="number" min="0" max="100" placeholder="100" ).skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill
-                
-                    input(type="text" placeholder="CSS3").work-skill.value-bold
-                    .skill-box
-                        input(type="number" min="0" max="100" placeholder="90" ).skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                
-                    input(type="text" placeholder="JavaScript").work-skill.value-bold
-                    .skill-box
-                        input(type="number" min="0" max="100" placeholder="80").skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-                  form.name__skills-form.name__skills-form--skill(@submit.prevent = 'editSkill')  
-                
-                    input(type="text" placeholder="jquery и Vue.js").work-skill.value-bold
-                    .skill-box
-                      input(type="number" min="0" max="100" placeholder="85").skill-value.skill-value--edited.value-bold
-                    .form-yesno-buttons
-                      button(type="submit").button.button--edit
-                      button(type="button").button.button--delete
-            
-                  
-
-                form.name__skills-form.name__skills-form--newskill(@submit.prevent = 'newSkill')   
-              
-                  input(required placeholder="Новый навык").new-skill
-                  .skill-box
-                      input(required type="number" min="0" max="100" placeholder="100").skill-value.value-bold
-                  button(type="submit").button.button--big
-                    span.button--text +
-        section.section--works
-            h1.name__desc-text Блок &laquo;Работы&raquo;
-            form.section-block.edit-card.edit-card--works(@submit.prevent = 'newWork') 
-              h2.edit-card__name Редактирование работы
-              .edit-card__download-area
-                input.inputfile(type="file" required name="file" id="file") 
-                label.inputfile__label(for="file")
-                  .inputfile__text Перетащите или нажмите для загрузки изображения
-                  button.button.button--submit загрузить
-              .edit-card__content
-                label.edit-card__label Название
-                  input( required placeholder = "Сайт для туристической компании").edit-card__input
-                label.edit-card__label Ссылка
-                  input(required placeholder = "Anextour.com").edit-card__input
-                label.edit-card__label Описание
-                  textarea( rows="5" required placeholder="Сайт для реализации вашей мечты, путешествия в дальние страны с невероятным уровнем сервиса").edit-card__textarea.edit-card__input
-                label.edit-card__label Добавление тега
-                  input(required placeholder = "HTML,").edit-card__input
-                ul.edit-card__taglist
-                  li.edit-card__tag
-                    p.edit-card__description HTML
-                    button(type="button").button.edit-card__cross 
-                  li.edit-card__tag
-                    p.edit-card__description CSS
-                    button(type="button").button.edit-card__cross 
-                  li.edit-card__tag
-                    p.edit-card__description Javascript
-                    button(type="button").button.edit-card__cross 
-                .edit-card__buttons
-                  button(type = "reset").edit-card__reset Отмена
-                  button(type = "submit").button.button--submit.button--edit-submit сохранить
-            .edited-blocks
-              button.button.button--add-card
-                .button__pic +
-                p.button__name Добавить работу
-              -for (var i=0;i<3; i++)  
-                .section-block.edited-card
-                  .edited-card__picture-box
-                    img(src='../images/content/slider/1.jpg').edited-card__picture
-                  .edited-card__description
-                    .edited-card__name Сайт туристической компании
-                    p.edited-card__text Пальмы, белый песок и обворожительный океан......что может быть прекраснее, отправится вдаль от метели и холодов, к теплому утру..
-                    a(href="#").edited-card__link Anextour.com
-                    .edited-card__buttons
-                      button(type="button").button.button--edit-edited Править
-                      button(type="button").button.button--delete-edited Удалить
-
-        section.section--feedback
-            h1.name__desc-text Блок &laquo;Отзывы&raquo;
-            form.section-block.edit-card.edit-card--feedback(@submit.prevent = "feedbackEdit")
-              h2.edit-card__name Новый отзыв
-              .edit-card__download-area.edit-card__download-area--feedback
-                input.inputfile(type="file" required name="file" id="userpic") 
-                label.inputfile__label(for="userpic")
-                  .userpic-bg
-                    .userpic-svg
-                
-                  .button.button--link Добавить фото
-              .edit-card__content.edit-card__content--feedback
-                .edit-card__row
-                  label.edit-card__label.edit-card__label--feedback Имя автора
-                    input( required placeholder = "Грегори Хаус").edit-card__input.edit-card__input--feedback
-                  label.edit-card__label.edit-card__label--feedback Статус
-                    input(required placeholder = "Доктор Медицины").edit-card__input.edit-card__input--feedback
-                label.edit-card__label Отзыв
-                  textarea( rows="5" required placeholder="Игнорируете меня? Или молча наслаждаетесь моим обаянием?").edit-card__textarea.edit-card__textarea--feedback
-              
-                .edit-card__buttons
-                  button(type = "reset").edit-card__reset Отмена
-                  button(type = "submit").button.button--submit.button--edit-submit сохранить
-
-            .edited-blocks
-              button.button.button--add-card.button--add-card--feedback
-                .button__pic +
-                p.button__name Добавить отзыв
-              -for(var i=0;i<4;i++)  
-                .section-block.edited-card.edited-card--feedback
-                  .edited-card__speaker-info
-                    .edited-card__speaker-picture-box
-                      img(src='../images/content/loft/vova.png').edited-card__speaker-picture
-                    .edited-card__speaker-textinfo
-                      p.edited-card__speaker-name Владимир Сабанцев
-                      p.edited-card__speaker-occ Преподаватель
-                  .edited-card__description.edited-card__description--feedback
-                    p.edited-card__text.text-feedback Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .edited-card__buttons
-                      button(type="button").button.button--edit-edited Править
-                      button(type="button").button.button--delete-edited Удалить
-
-
-
-       
-
-
-
-
+  .wrapper
+    .wrapper__filter(v-if="isLoggedIn")
+      header.header
+        .container.container--header
+          .userpic
+            .userpic__photo
+              img(src="../images/content/avatar.png" class='userjpg' alt="мое лицо")
+            .userpic__name Усачев Олег
+          .admin Панель администрирования
+          a(href="#" @click = "logout").exit Выйти
+      nav.navigation
+        .container.container--navigation
+          ul.navigation__list
+            li.navigation__item(:class="{active:this.currentMenu === 'aboutmmyself'}")
+              a(href="#" @click = "aboutmyself").navigation__link Обо мне
+            li.navigation__item(:class="{active:this.currentMenu === 'works'}")
+              a(href="#" @click = "works").navigation__link  Работы
+            li.navigation__item(:class="{active:this.currentMenu === 'feedback'}")
+              a(href="#" @click = "feedback").navigation__link Отзывы
+      main.maincontent
         
-          
-      
+          aboutmyself(v-if ="currentMenu ==='aboutmyself'")
+          works(v-if ="currentMenu === 'works'")
+          feedback(v-if ="currentMenu === 'feedback'")
+
+
+    .popup(v-if = "!isLoggedIn")
+      .popup__filter
+        .container.container--popup
+          form.form-login(@submit.prevent="login")
+            h2.form-login__headline Авторизация
+            label.form-login__label.form-login__label--login {{loginError.user}}
+              input(required v-model = "user.name").form-login__input
+            label.form-login__label.form-login__label--password Пароль
+              input(required v-model = "user.password").form-login__input
+            button(type= "submit").button.button-login-submit Отправить
+            button(type = "button").button.button-login-exit    
+</template>
+
+<script>
+import aboutme from './components/aboutmyself';
+import works from './components/works';
+import feedback from './components/feedback';
+import {mapActions} from 'vuex';
+import $axios from "./requests";
+
+
+export default {
+  data: function () {
+      return {
         
     
-        
+        user: {},
+        loginError: {user: "Имя пользователя", pass: "Введите пароль"},
+     
+        isLoggedIn: true,
+        currentMenu:'aboutmyself',
 
-</template>
+      };
+    
+    },
+    
+  components: {
+    aboutme, works, feedback
+    },
+ 
+  methods: {
+
+    fetchGroups(user) {
+      $axios.get(
+        `/categories/${user}`
+      )
+      .then(
+        response=>{
+          this.categories = response.data,
+          this.getCategories(
+            response.data
+          )
+        }
+      )
+  }, //обновление данных по скиллам 
+
+  fetchWorks(user) {
+    $axios.get(
+      `/works/${user}`
+      )
+      .then(
+         response=>{
+            this.getWorks(
+              response.data
+            )
+          }
+      )
+  }, //обновление данных по портфолио работ 
+  
+  fetchFeedback(user){
+    $axios.get(
+      `/reviews/${user}`
+      )
+      .then(
+        response=>{
+          this.getFeedback(
+           response.data
+          )
+        }
+      )
+  }, //обновление данных по отзывам 
+            
+  login(){
+    $axios.post(
+      '/login',this.user
+    )
+    .then(
+      response => {
+          let token=response.data.token;
+            localStorage.setItem(
+              "token", token
+              ); 
+              this.isLoggedIn = true;
+          
+              $axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+                $axios.get(
+                  '/user'
+                  )
+                  .then(
+                    response=>{
+                      let userId=response.data.user.id;
+                     
+                       this.fetchGroups(
+                         userId
+                         );
+                       this.fetchWorks(
+                         userId
+                         ); 
+                       this.fetchFeedback(
+                         userId
+                         )
+                         }
+                         ) 
+                }
+    )
+    .catch(
+      error=>{
+       this.loginError.user = error.response.data.error,
+        this.loginError.pass = error.response.data.error
+        }
+         ),
+       this.user = {}
+    }, 
+
+  logout(){
+    this.isLoggedIn = false,
+     $axios.defaults.headers['Authorization'] = ``;
+      localStorage.clear();
+      console.log (localStorage)
+  }, //выход из админки, удаляет токен из localStorage
+
+  aboutme(){
+    this.currentMenu = 'aboutmyself'},
+  works(){
+    this.currentMenu = 'works'},
+  feedback(){
+    this.currentMenu = 'feedback'}, //блок навигации по меню
+
+  getUserId(){$axios.get('/user').then(resp => {
+      const userId = resp.data.user.id;
+      this.isLoggedIn=true;
+      this.fetchGroups(userId);
+      this.fetchWorks(userId); 
+      this.fetchFeedback(userId)
+   }).catch(this.isLoggedIn=false);},
+
+
+  ...mapActions(['getCategories', 'getWorks', 'getFeedback']),
+ 
+ },
+ created() {
+   $axios.get('/user').then(resp => {
+      const userId = resp.data.user.id;
+      this.isLoggedIn=true;
+      this.fetchGroups(userId);
+      this.fetchWorks(userId); 
+      this.fetchFeedback(userId)
+   }).catch(this.isLoggedIn=false);
+ }
+
+}
+</script>
+
+
+
 <style lang = "postcss">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import "normalize.css";
@@ -1132,9 +1069,9 @@ button {
     grid-template-rows: 0.1fr 1.1fr 1.2fr;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "name name"
-      "download content"
-      ". content";
+      "name"
+      "download"
+      "content";
   }
   @include phones {
     grid-template-rows: 0.1fr 0.7fr 1.2fr;
@@ -1223,65 +1160,8 @@ button {
 
 
 
-<script>
-import { Validator } from "simple-vue-validator";
-export default {
-  data: function() {
-    return {
-      branchName: "",
-      newSkillName: "",
-      percent: ""
-    };
-  },
-  methods: {
-    newGroup() {
-      this.$validate().then(function(sucess) {
-        if (sucess) {
-          console.log("Push form on the server");
-        } else {
-          console.log("Bad Validation");
-        }
-      });
-    },
 
-    newSkill() {
-      this.$validate().then(function(sucess) {
-        if (sucess) {
-          console.log("Send form to the server");
-        } else {
-          console.log("validation error");
-        }
-      });
-    },
-    editSkill: function(e) {
-      console.log("Edit skill");
-    },
-    editSkillBranchName: function(e) {
-      console.log("edit skill_branch");
-    },
-    newWork: function(e) {
-      console.log("edit work");
-    },
-    login: function(e) {
-      console.log("login");
-    },
-    feedbackEdit: function(e) {
-      console.log("edit feedback card");
-    }
-  },
-  validators: {
-    branchName: function(value) {
-      return Validator.value(value).required();
-    },
-    newSkillName: function(value) {
-      return Validator.value(value).required();
-    },
-    percent: function(value) {
-      return Validator.value(value).required();
-    }
-  }
-};
-</script>
+
 
 
 

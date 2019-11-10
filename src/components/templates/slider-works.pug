@@ -40,7 +40,6 @@ script(type="text/x-template")#slider-previews
 
 script(type="text/x-template")#slider-btns
  .slider__buttons
-    .slider-button
         button(@click.prevent="$emit('slide','next')").slider-buttons__item
             +icon("arrow-down","slider-buttons__item--slide--next arrow")
         button(@click.prevent="$emit('slide','prev')").slider-buttons__item
