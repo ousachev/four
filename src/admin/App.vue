@@ -286,9 +286,6 @@ button {
   background: url("../images/content/background.png") no-repeat center;
   background-size: cover;
   z-index: -2;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 .popup__filter {
   background: #3c4b5e;
