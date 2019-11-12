@@ -3,7 +3,7 @@
       section.name
           .name__desc
             h1.name__desc-text Блок &laquo;Обо мне&raquo;
-            button(type='button').button.button--plus Добавить группу
+            button(type='button' @click="newGroup").button.button--plus Добавить группу
       section.name__skills
 
             aboutmyselfCard(v-for="cat in compts.categories" :cat="cat" :key="cat.id")
@@ -21,7 +21,7 @@ import {mapState, mapActions} from 'vuex';
 
 export default {
     components: {
-        aboutmeCard
+        aboutmyselfCard
         },
     computed:{
         ...mapState({compts: state => state.skills

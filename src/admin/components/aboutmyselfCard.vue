@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import addSkill from "./aboutmyselfAdd"
+import addSkill from "./aboutmyselfAddNewSkill"
 import skill from './aboutmyselfSkill'
 import {mapState, mapActions} from 'vuex';
 import $axios from "../requests";

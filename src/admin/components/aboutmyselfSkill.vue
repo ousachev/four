@@ -1,15 +1,15 @@
 <template lang="pug">
     .form__content
         form.name__skills-form.name__skills-form--newskill(:class="{editing: this.isEditMode}" @submit.prevent = 'editSkill') 
-        .form__add
-            input( placeholder="Новый навык" v-model = "newSkill.title" ).new-skill
-        .skill-box
-            input( type="number" min="0" max = "100" v-model ="newSkill.percent").skill-value.value-bold.skill-value--edited
-        .form-yesno-buttons
-            button(type="submit" @click="editModeOn" v-if="!isEditMode").button.button--edit
-            button(type="button" @click="deleteSkill" v-if="!isEditMode").button.button--delete
-            button(type="submit" v-if="isEditMode").button.button--green 
-            button(type="button" v-if="isEditMode" @click="editModeOff").button.button--cross
+            .form__add
+                input( placeholder="Новый навык" v-model = "newSkill.title" ).new-skill
+            .skill-box
+                input( v-model ="newSkill.percent").skill-value.value-bold.skill-value--edited
+            .form-yesno-buttons
+                button(type="submit" @click="editModeOn" v-if="!isEditMode").button.button--edit
+                button(type="button" @click="deleteSkill" v-if="!isEditMode").button.button--delete
+                button(type="submit" v-if="isEditMode").button.button--green 
+                button(type="button" v-if="isEditMode" @click="editModeOff").button.button--cross
 
 </template>
 

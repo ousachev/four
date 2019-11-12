@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import aboutme from './components/aboutmyself';
+import aboutmyself from './components/aboutmyself';
 import works from './components/works';
 import feedback from './components/feedback';
 import {mapActions} from 'vuex';
@@ -62,7 +62,7 @@ export default {
     },
     
   components: {
-    aboutme, works, feedback
+    aboutmyself, works, feedback
     },
  
   methods: {
@@ -156,7 +156,7 @@ export default {
       console.log (localStorage)
   }, //выход из админки, удаляет токен из localStorage
 
-  aboutme(){
+  aboutmyself(){
     this.currentMenu = 'aboutmyself'},
   works(){
     this.currentMenu = 'works'},
@@ -209,6 +209,9 @@ export default {
 }
 .wrapper__filter {
   background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .container {
   @include phones {
@@ -219,6 +222,7 @@ export default {
 /* Настройки */
 .container--maincontent {
   width: 95%;
+  min-height: 100vh;
   @include tablets {
     width: 96%;
   }
@@ -233,9 +237,6 @@ input {
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-}
-input[type="number"] {
-  -moz-appearance: textfield;
 }
 button {
   background: transparent;
@@ -254,7 +255,10 @@ button {
     opacity: 1;
   }
 }
+
+.skills-form{padding: 15px 0; border-bottom: 1px solid #dedee0; display: flex; justify-content: space-between; align-items: center};
 .skill-name {
+  grid-area: name; align-items: center; color: #4e586d; font-size: 18px; font-weight: 700;
   &::-webkit-input-placeholder {
     color: $admin;
     font-weight: 600;
@@ -282,6 +286,9 @@ button {
   background: url("../images/content/background.png") no-repeat center;
   background-size: cover;
   z-index: -2;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .popup__filter {
   background: #3c4b5e;
@@ -595,12 +602,6 @@ button {
   width: 100%;
   padding-bottom: 45px;
 }
-.form__add {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
-}
 .name__skills {
   display: grid;
   grid-template-rows: 1fr;
@@ -609,6 +610,10 @@ button {
     grid-template-columns: 1fr;
   }
 }
+.form-yesno-buttons{
+  display: flex;
+}
+
 .button--submit {
   background: linear-gradient(
     0deg,
@@ -670,14 +675,16 @@ button {
   font-weight: 700;
 }
 .name__skills-form--newskill {
-  justify-content: flex-end;
+  grid-area: new; 
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
 .skill-box {
   width: 20%;
   text-align: center;
   position: relative;
   align-items: center;
-  margin: 0 11px;
 }
 .skill-box::after {
   content: "%";
