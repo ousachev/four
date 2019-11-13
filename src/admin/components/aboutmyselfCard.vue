@@ -8,7 +8,8 @@
                  button(type="button" v-if="isEditMode" @click="editModeOff").button.button--cross 
                  button(type="button" v-if="isEditMode" @click = "deleteCat").button.button--delete
         hr.form-divider
-        skill(:skill="skill" v-for = "skill in currentCat.skills" :key = "skill.id")
+        .form__content
+          skill(:skill="skill" v-for = "skill in currentCat.skills" :key = "skill.id")
         addSkill(:id = "currentCat.id")
 </template>
 

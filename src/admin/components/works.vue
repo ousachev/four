@@ -1,5 +1,6 @@
 <template lang="pug">
     section.section--works
+      .container
        editor(v-if="this.openEditor" @closeEditor = "closeEditor")
 
        .edited-blocks

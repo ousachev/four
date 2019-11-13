@@ -23,9 +23,9 @@
             h2.edit-card__name Редактирование работы
             .edit-card__download-area
               input.inputfile(type="file"  name="file" id="file" @change="processFile") 
-              label.inputfile__label(for="file")
+              label.inputfile__label(for="file" )
                 .inputfile__text Перетащите или нажмите для загрузки изображения
-                
+
             .edit-card__content
               label.edit-card__label Название
                 input(required placeholder = "Сайт для туристической компании" v-model = "work.title").edit-card__input

@@ -1,10 +1,9 @@
 <template lang="pug">
-    .form__content
         form.name__skills-form.name__skills-form--newskill(:class="{editing: this.isEditMode}" @submit.prevent = 'editSkill') 
             .form__add
-                input( placeholder="Новый навык" v-model = "newSkill.title" ).new-skill
+                input( placeholder="Новый навык" v-model = "newSkill.title" ).new-skill.new-skill--rename
             .skill-box
-                input( v-model ="newSkill.percent").skill-value.value-bold.skill-value--edited
+                input(type="number" min="0" max="100%" v-model ="newSkill.percent").skill-value.value-bold.skill-value--edited
             .form-yesno-buttons
                 button(type="submit" @click="editModeOn" v-if="!isEditMode").button.button--edit
                 button(type="button" @click="deleteSkill" v-if="!isEditMode").button.button--delete
@@ -70,6 +69,8 @@ export default {
 
 <style lang="postcss" scoped>
 .name__skills-form--newskill .skill-value--edited,.new-skill  {pointer-events:none; border-bottom: 1px transparent solid}
+.name__skills-form{margin-bottom:10px}
+.new-skill--rename{width:100%;}
 .editing .skill-value--edited{pointer-events: all; border-bottom: 1px solid #000}
 .editing .new-skill {pointer-events: all; border-bottom: 1px solid #000; text-align: center}
 

@@ -22,7 +22,7 @@
         form.section-block.edit-card.edit-card--feedback(v-if ="isEditMode" @submit.prevent = "confirm")
                 h2.edit-card__name Изменить отзыв
                 .edit-card__download-area.edit-card__download-area--feedback
-                    input.inputfile(type="file" name="file" id="userpic" @change="processFile") 
+                    input.inputfile(type="file" name='file' id="userpic" @change="processFile")
                     label.inputfile__label(for="userpic")
                         .userpic-bg
                             .userpic-svg

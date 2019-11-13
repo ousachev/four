@@ -5,12 +5,11 @@
             .form-yesno-buttons
                 button(type="submit").button.button--green 
                 button(type="reset").button.button--cross 
-            hr.form-divider
 </template>
 
 <script>
 export default {
-  data(){return {branchName: ""}},
+  data(){return {branchName: "qq"}},
   
   methods:{newGroup(){this.$emit('newGroup', this.branchName); this.branchName = ""} }
 }

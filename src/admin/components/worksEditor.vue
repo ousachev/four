@@ -3,10 +3,11 @@
     h2.edit-card__name Редактирование работы
     
     .edit-card__download-area
-        input.inputfile(type="file" required name="file" id="file" @change="processFile") 
-        label.inputfile__label(for="file")
-            .inputfile__text Перетащите или нажмите для загрузки изображения
-            button.button.button--submit загрузить
+        label.inputfile__label(for="image")
+          vueDropzone(id="drop1" :options="dropOptions")
+          .inputfile__text Перетащите или нажмите для загрузки изображения
+          input.inputfile(type="file" name='image' id="file" @change="processFile") 
+          .button.button.button--submit загрузить
     .edit-card__content
         label.edit-card__label Название
             input( required placeholder = "Сайт для туристической компании" v-model="work.title").edit-card__input
@@ -27,23 +28,33 @@
 import {mapState, mapActions} from 'vuex';
 import buttonTag from "./worksTagButton";
 import $axios from "../requests";
+import vueDropzone from "vue2-dropzone";
 export default {
     data(){
         return{
-        work:{
-          title: "",
-          link:"",
-          techs: "",
-          description:"",
-          photo:""},
-        splitter : /\s*,\s*/,
-        
-        
+         photoUrl:'',
+         techString:'',
+         work:{
+            id:'',
+            title: "",
+            link:"",
+            techs: "",
+            description:"",
+            photo:""},
+            splitter : /\s*,\s*/,
+        dropOptions:{
+          url:"https://httpbin.org/post",
+          maxFilesize:1.5,
+          maxFiles:1,
+          chunking:false,
+          addRemoveLinks:false
         }
-        },
+        }
+    },
 
     components:{
-      buttonTag
+      buttonTag,
+      vueDropzone
       },
 
     computed:{

@@ -12,7 +12,7 @@
       nav.navigation
         .container.container--navigation
           ul.navigation__list
-            li.navigation__item(:class="{active:this.currentMenu === 'aboutmmyself'}")
+            li.navigation__item(:class="{active:this.currentMenu === 'aboutmyself'}")
               a(href="#" @click = "aboutmyself").navigation__link Обо мне
             li.navigation__item(:class="{active:this.currentMenu === 'works'}")
               a(href="#" @click = "works").navigation__link  Работы
@@ -31,6 +31,7 @@
           form.form-login(@submit.prevent="login")
             h2.form-login__headline Авторизация
             label.form-login__label.form-login__label--login {{loginError.user}}
+              .login__tooltip
               input(required v-model = "user.name").form-login__input
             label.form-login__label.form-login__label--password Пароль
               input(required v-model = "user.password").form-login__input
@@ -209,38 +210,34 @@ export default {
 }
 .wrapper__filter {
   background: rgba(255, 255, 255, 0.9);
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 .container {
+  max-width:1200px;
   @include phones {
-    width: 100%;
+    width: 89%;
   }
 }
 
 /* Настройки */
-.container--maincontent {
-  width: 95%;
+.maincontent {
   min-height: 100vh;
-  @include tablets {
-    width: 96%;
-  }
   @include phones {
-    width: 94%;
+    width: 101%;
   }
 }
 input {
   outline: none;
   border: none;
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
+}
+textarea{
+  resize:none;
 }
 button {
   background: transparent;
   font-weight: bold;
+  &:active, &:focus{
+    outline:none;
+  }
 }
 ::placeholder {
   background: white;
@@ -256,7 +253,9 @@ button {
   }
 }
 
-.skills-form{padding: 15px 0; border-bottom: 1px solid #dedee0; display: flex; justify-content: space-between; align-items: center};
+.skills-form{padding: 15px 0;padding-left:80px;width:100%; display: flex; justify-content: space-between; align-items: center;
+@include tablets{padding-left:0;}
+}
 .skill-name {
   grid-area: name; align-items: center; color: #4e586d; font-size: 18px; font-weight: 700;
   &::-webkit-input-placeholder {
@@ -283,15 +282,12 @@ button {
 .popup {
   height: 100vh;
   width: 100%;
-  background: url("../images/content/background.png") no-repeat center;
-  background-size: cover;
   z-index: -2;
 }
 .popup__filter {
   background: #3c4b5e;
   opacity: 0.9;
   height: 100%;
-  width: 100%;
   z-index: -1;
 }
 .container--popup {
@@ -478,7 +474,7 @@ button {
     margin-right: 0;
   }
 }
-.navigation__item--active {
+.navigation__item.active {
   border-bottom: 2px solid #383ace;
   color: #383ace;
 }
@@ -527,8 +523,8 @@ button {
   }
 }
 .button--big {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   margin-left: 15px;
   background: linear-gradient(to right, #006aed, #3f35cb);
   border-radius: 50%;
@@ -544,21 +540,21 @@ button {
   font-weight: 600;
 }
 .button--green {
-  height: 20px;
-  width: 20px;
-  margin-right: 20px;
+  height: 15px;
+  width: 17px;
+  margin-right: 15px;
   background: svg-load("tick.svg", fill = #02d70c, width = 100%, height = 100%)
     no-repeat center;
 }
 .button--cross {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   background: svg-load("close.svg", fill = #bf2929, width = 100%, height = 100%)
     no-repeat center;
 }
 .button--edit {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   background: svg-load(
       "pencil.svg",
       fill = #b4b8c1,
@@ -577,8 +573,8 @@ button {
   );
 }
 .button--delete {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 17px;
   background: svg-load("trash.svg", fill = #b4b8c1, width = 100%, height = 100%)
     no-repeat center;
   margin-left: 20px;
@@ -598,6 +594,7 @@ button {
   flex: 1;
   width: 100%;
   padding-bottom: 45px;
+  padding-top:30px;
 }
 .name__skills {
   display: grid;
@@ -678,7 +675,7 @@ button {
   justify-content: space-between;
 }
 .skill-box {
-  width: 20%;
+
   text-align: center;
   position: relative;
   align-items: center;
@@ -686,20 +683,15 @@ button {
 .skill-box::after {
   content: "%";
   position: absolute;
-  left: 76%;
-  top: -3%;
+  left: 65%;
+  top: -8%;
   display: block;
   color: #000;
   font-size: 17px;
-  @include desktop {
-    margin-left: 10px;
-  }
-  @include tablets {
-    margin-left: 20px;
-  }
+ 
 }
 .skill-name {
-  width: 60%;
+  width: 55%;
   border-bottom: 1px solid transparent;
   margin-left: 10px;
   padding-bottom: 10px;
@@ -721,13 +713,19 @@ button {
 .new-skill {
   width: 46%;
   border-bottom: 1px solid #000;
-  margin-left: 10px;
-  padding: 0 12px 10px;
+  padding: 0 12px 10px 10px;
+  width:65%;
+
 }
 .skill-value {
   border-bottom: 1px solid #000;
   margin-left: 10px;
   padding: 0 12px 10px;
+  width:20%;
+
+  @include tablets{
+    padding:0 0 10px 0;
+  }
 }
 .work-skill {
   margin-left: 15px;
@@ -745,6 +743,7 @@ button {
   font-size: 18px;
   text-align: center;
   position: relative;
+  width:65%;
 }
 
 /* Блок Работы*/
@@ -783,6 +782,7 @@ button {
 .edit-card__download-area {
   align-self: center;
   background: #dee4ed;
+  position:relative;
   left: 0;
   border: #a1a1a1 1px dashed;
   padding: 68px 155px;
@@ -1023,6 +1023,15 @@ button {
   line-height: 1.88;
 }
 
+
+#drop1{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    top:0;
+    left:0;
+}
 /* Блок Отзывы */
 
 .edited-card--feedback {

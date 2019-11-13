@@ -1,5 +1,6 @@
 <template lang="pug">
     section.section--feedback
+      .container
        editor(v-if = "isEditorOpen" @closeEditor = "closeEditor")
        .edited-blocks
             button(@click = "openEditor" v-if="!isEditorOpen").button.button--add-card.button--add-card--feedback

@@ -2,8 +2,9 @@
     
       form.skills-form.skills-form--newskill(@submit.prevent = 'newSkill') 
         input( placeholder="Новый навык" v-model = "skill.title" required).new-skill
-        input( type="number" max = "100" placeholder="%" required v-model ="skill.percent").skill-value
-        button(type="submit").button.button--big 
+        input( type="number" max = "100" min="0" placeholder="%" required v-model ="skill.percent").skill-value
+        button(type="submit").button.button--big
+            .button--text +
 </template>
 
 <script>
