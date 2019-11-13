@@ -1000,6 +1000,10 @@ button {
       no-repeat center;
   }
 }
+.reviewCard{
+      max-width: 100%;
+}
+
 .edited-card__text {
   color: #7a8191;
   margin: 24px 0;
@@ -1009,6 +1013,9 @@ button {
   text-align: left;
   color: rgba(65, 76, 99, 0.7);
   padding-right: 30px;
+  display: inline-block;
+  word-break: break-word;
+  overflow: hidden;
 }
 .edited-card__name {
   font-weight: 700;
