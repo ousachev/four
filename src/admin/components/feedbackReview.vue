@@ -3,10 +3,10 @@
         .section-block.edited-card.edited-card--feedback(v-if ="!isEditMode")
                 .edited-card__speaker-info
                     .edited-card__speaker-picture-box
-                    img(:src='picture').edited-card__speaker-picture
+                         img(:src='picture').edited-card__speaker-picture
                     .edited-card__speaker-textinfo
-                    p.edited-card__speaker-name {{review.author}}
-                    p.edited-card__speaker-position {{review.occ}}
+                        p.edited-card__speaker-name {{review.author}}
+                        p.edited-card__speaker-position {{review.occ}}
                 
                 
                 .edited-card__description.edited-card__description--feedback
