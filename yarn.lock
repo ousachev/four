@@ -7859,6 +7859,11 @@ select-hose@^2.0.0:
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
 
+selenium-server-standalone@^2.53.1:
+  version "2.53.1"
+  resolved "https://registry.yarnpkg.com/selenium-server-standalone/-/selenium-server-standalone-2.53.1.tgz#683f9326d3a1af8a5bf4c0f73b1401494fee2c20"
+  integrity sha1-aD+TJtOhr4pb9MD3OxQBSU/uLCA=
+
 selenium-standalone@^6.15.4:
   version "6.16.0"
   resolved "https://registry.yarnpkg.com/selenium-standalone/-/selenium-standalone-6.16.0.tgz#ffcf02665c58ff7a7472427ae819ba79c15967ac"
