@@ -1,6 +1,7 @@
 <template lang="pug">
     section.section--feedback
       .container
+       h1.name__desc-text Блок &laquo;Отзывы&raquo;
        editor(v-if = "isEditorOpen" @closeEditor = "closeEditor")
        .edited-blocks
             button(@click = "openEditor" v-if="!isEditorOpen").button.button--add-card.button--add-card--feedback

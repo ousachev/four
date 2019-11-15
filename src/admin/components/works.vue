@@ -1,6 +1,7 @@
 <template lang="pug">
     section.section--works
       .container
+       h1.name__desc-text Блок &laquo;Работы&raquo;
        editor(v-if="this.openEditor" @closeEditor = "closeEditor")
 
        .edited-blocks

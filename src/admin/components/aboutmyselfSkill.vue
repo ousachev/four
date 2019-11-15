@@ -1,7 +1,7 @@
 <template lang="pug">
         form.name__skills-form.name__skills-form--newskill(:class="{editing: this.isEditMode}" @submit.prevent = 'editSkill') 
             .form__add
-                input( placeholder="Новый навык" v-model = "newSkill.title" ).new-skill.new-skill--rename
+                input( placeholder="Новый навык" v-model = "newSkill.title" required).new-skill.new-skill--rename
             .skill-box
                 input(type="number" min="0" max="100%" v-model ="newSkill.percent").skill-value.value-bold.skill-value--edited
             .form-yesno-buttons

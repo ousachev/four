@@ -34,7 +34,7 @@
               .login__tooltip
               input(required v-model = "user.name").form-login__input
             label.form-login__label.form-login__label--password Пароль
-              input(required v-model = "user.password").form-login__input
+              input(required v-model = "user.password" type="password").form-login__input
             button(type= "submit").button.button-login-submit Отправить
             button(type = "button").button.button-login-exit    
 </template>
@@ -496,7 +496,7 @@ button {
   font-weight: 700;
   font-size: 21px;
   padding: 30px 0 0 10px;
-  margin: 10px 60px 50px 0;
+  margin: 10px 60px 20px 0;
   @include phones {
     padding: 15px 0 5px;
     margin: 10px 0 20px 0;

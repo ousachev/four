@@ -5,8 +5,8 @@
             .form-yesno-buttons
                  button(type="button" @click="editModeOn" v-if="!isEditMode").button.button--edit
                  button(type="submit" v-if="isEditMode").button.button--green 
+                 button(type="button" v-if="!isEditMode" @click = "deleteCat").button.button--delete
                  button(type="button" v-if="isEditMode" @click="editModeOff").button.button--cross 
-                 button(type="button" v-if="isEditMode" @click = "deleteCat").button.button--delete
         hr.form-divider
         .form__content
           skill(:skill="skill" v-for = "skill in currentCat.skills" :key = "skill.id")
