@@ -11,12 +11,12 @@
         .edit-card__content.edit-card__content--feedback
           .edit-card__row
             label.edit-card__label.edit-card__label--feedback Имя автора
-              input( required placeholder = "Грегори Хаус" v-model="review.author").edit-card__input.edit-card__input--feedback
+              input( required v-model="review.author").edit-card__input.edit-card__input--feedback
             label.edit-card__label.edit-card__label--feedback Статус
-              input(required placeholder = "Доктор Медицины" v-model="review.occ").edit-card__input.edit-card__input--feedback
+              input(required  v-model="review.occ").edit-card__input.edit-card__input--feedback
           .edit-card__row
             label.edit-card__label.edit-card__label--textarea Отзыв
-              textarea( rows="5" required v-model="review.text" placeholder="Игнорируете меня? Или молча наслаждаетесь моим обаянием?").edit-card__textarea.edit-card__textarea--feedback
+              textarea( rows="5" required v-model="review.text").edit-card__textarea.edit-card__textarea--feedback
         
           .edit-card__buttons
             button(type = "reset" @click = "closeEditor").edit-card__reset Отмена

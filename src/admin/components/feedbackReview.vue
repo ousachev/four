@@ -29,11 +29,11 @@
                 .edit-card__content
                   .edit-card__row
                       label.edit-card__label.edit-card__label--feedback Имя автора
-                          input( required placeholder = "Грегори Хаус" v-model="review.author").edit-card__input.edit-card__input--feedback
+                          input( required v-model="review.author").edit-card__input.edit-card__input--feedback
                       label.edit-card__label.edit-card__label--feedback Титул
-                          input(required placeholder = "Доктор Медицины" v-model="review.occ").edit-card__input.edit-card__input--feedback
+                          input(required  v-model="review.occ").edit-card__input.edit-card__input--feedback
                   label.edit-card__label Отзыв
-                      textarea( rows="5" v-model="review.text" required placeholder="Игнорируете меня? Или молча наслаждаетесь моим обаянием?").edit-card__textarea.edit-card__textarea--feedback
+                      textarea( rows="5" v-model="review.text" required ).edit-card__textarea.edit-card__textarea--feedback
                   
                   .edit-card__buttons
                       button(type = "reset" @click = "closeEditor").edit-card__reset Отмена
