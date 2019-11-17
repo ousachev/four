@@ -835,6 +835,10 @@ button {
   color: rgba(65, 76, 99, 0.5);
   font-weight: 700;
 }
+
+.edit-card__label--textarea{
+  width: 100%;
+}
 .edit-card__input {
   padding: 14px 0;
   border-bottom: 1px solid $admin;
@@ -873,7 +877,7 @@ button {
   margin-top: 30px;
   display: flex;
   justify-content: flex-end;
-  @include tablets {
+  @include phones {
     justify-content: center;
   }
 }
@@ -964,6 +968,7 @@ button {
 .button--edit-edited {
   position: relative;
   color: rgba(65, 76, 99, 0.5);
+  margin-left: -5px;
   &:after {
     content: "";
     position: absolute;
@@ -1062,7 +1067,6 @@ button {
   padding-bottom: 15px;
   border-bottom: 1px solid #b9bdc5;
   align-items: center;
-  justify-content: center;
 }
 .edited-card__speaker-picture-box {
   border-radius: 50%;
@@ -1070,12 +1074,11 @@ button {
   height: 50px;
   width: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .edited-card__speaker-picture {
-  max-width: 200%;
-  transform: translateY(30%);
+  max-width: 230%;
+  transform: translate(-23%,27%);
 }
 .edited-card__speaker-textinfo {
   margin-left: 20px;
@@ -1089,9 +1092,9 @@ button {
     grid-template-rows: 0.1fr 1.1fr 1.2fr;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "name"
-      "download"
-      "content";
+    "name name"
+    "download content"
+     ". content";
   }
   @include phones {
     grid-template-rows: 0.1fr 0.7fr 1.2fr;
