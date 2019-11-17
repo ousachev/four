@@ -24,7 +24,7 @@
                 .edit-card__download-area.edit-card__download-area--feedback
                     label.inputfile__label(for="userpic")
                       input.inputfile(type="file" name='file' id="userpic" @change="appendFileAndRenderPhoto")
-                      .userpic-bg(:class="{filled:renderedPhoto.length}" :style="{'backgroundImage':`url(${renderedPhoto})`}")
+                      .userpic-bg( :style="{'backgroundImage':`url(${renderedPhoto})`}")
                       .button.button--link Изменить фото
                 .edit-card__content
                   .edit-card__row
