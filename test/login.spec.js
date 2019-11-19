@@ -11,7 +11,7 @@ beforeAll(() =>{
 
 test('На странице есть кнопка Авторизоваться',()=>{
     return client
-        .isExisting('.button-login-submit').then(browsers=>{
+        .isExisting('.form__btn').then(browsers=>{
             for (const browserName in browsers){
                 expect(browsers[browserName]).toBe(true);
             }
